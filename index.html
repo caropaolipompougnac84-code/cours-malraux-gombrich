@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les formes qui parlent – Malraux × Gombrich</title>
+<style>
+:root{--paper:#ffffff;--ink:#1c1a17;--gold:#c9a24a;--red:#a8322d;--blue:#2c5d7c;--green:#2f6b47;--muted:#6b645a;--card:#ffffff;--line:#e2d9c8;--corr:#1f6f50;--corr-fond:#eaf3ef}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:18px}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+.sans{font-family:-apple-system,Helvetica,Arial,sans-serif}
+header.hero{position:relative;color:#f6f1e7;padding:80px 0 64px;text-align:center;background:#0f0e0c url(img/angkor.jpg) center/cover}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,14,12,.72),rgba(15,14,12,.9))}
+header.hero .wrap{position:relative}
+.hero small{letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-size:13px}
+.hero h1{font-size:clamp(36px,8vw,68px);margin:14px 0 10px;line-height:1.05}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{max-width:620px;margin:0 auto;color:#e2d9c8}
+.hook{margin:30px auto 0;max-width:600px;border-left:3px solid var(--gold);padding:10px 18px;text-align:left;font-size:21px;color:#fff}
+.who{margin-top:26px}
+.who input{font-size:16px;padding:10px 12px;border-radius:6px;border:0;width:220px;max-width:70%}
+nav{position:sticky;top:0;background:var(--ink);z-index:10;overflow-x:auto;white-space:nowrap;font-size:14px;-webkit-overflow-scrolling:touch}
+nav a{color:#e9e1d1;text-decoration:none;display:inline-block;padding:13px 12px}
+nav a:hover{color:var(--gold)}
+section{padding:54px 0;border-bottom:1px solid var(--line)}
+.kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+h2{font-size:clamp(26px,5vw,38px);margin:6px 0 18px;line-height:1.15}
+h3{margin:26px 0 8px;line-height:1.25}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 0 #e7dfcf}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.duo{grid-template-columns:1fr}}
+.g{border-top:5px solid var(--blue)}.m{border-top:5px solid var(--red)}.e{border-top:5px solid var(--green)}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:20px;color:#fff;margin-bottom:6px}
+.tg{background:var(--blue)}.tm{background:var(--red)}.tb{background:#555}.te{background:var(--green)}
+blockquote{margin:14px 0;padding:12px 18px;border-left:4px solid var(--gold);background:#fbf6ea;font-size:19px}
+blockquote cite{display:block;font-size:14px;color:var(--muted);font-style:normal;margin-top:6px}
+button{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:15px;background:var(--ink);color:#fff;border:0;border-radius:6px;padding:10px 15px;cursor:pointer;margin:4px 4px 4px 0;min-height:42px}
+button:hover{background:var(--red)}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+button.sel{background:var(--gold);color:var(--ink)}
+figure{margin:0}
+.art{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start}
+@media(max-width:700px){.art{grid-template-columns:1fr}}
+.art img{width:100%;border-radius:8px;max-height:340px;object-fit:cover;background:#ddd}
+figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+.flip{perspective:900px;cursor:pointer;height:200px}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:10px;padding:16px;display:flex;flex-direction:column;justify-content:center}
+.flip .f{background:var(--ink);color:#fff;text-align:center;font-size:22px}
+.flip .f span{font-size:13px;color:var(--gold);margin-top:8px}
+.flip .b{background:var(--card);border:1px solid var(--line);transform:rotateY(180deg);font-size:15.5px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.q .opts button{background:#fff;color:var(--ink);border:1px solid #cfc5b2;text-align:left}
+.q .opts button.ok{background:var(--green);color:#fff;border-color:var(--green)}
+.q .opts button.ko{background:var(--red);color:#fff}
+.fb{font-size:15px;color:var(--muted);min-height:20px}
+textarea{width:100%;min-height:120px;font-family:inherit;font-size:16px;padding:12px;border:1px solid #cfc5b2;border-radius:8px;background:#fff}
+.count{font-size:13px;color:var(--muted)}
+.progress{height:10px;background:var(--line);border-radius:8px;overflow:hidden;margin:8px 0}
+.progress div{height:100%;width:0;background:var(--gold);transition:width .4s}
+.mission{background:var(--ink);color:#f6f1e7;border-radius:12px;padding:24px}
+.mission h3{color:var(--gold);margin-top:0}
+.mission label{display:block;margin:6px 0}
+.sort{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{font-size:15px;background:#fff;border:1px dashed #998;padding:9px 13px;border-radius:20px;cursor:pointer;user-select:none}
+.chip.g1{background:var(--blue);color:#fff;border-style:solid}.chip.m1{background:var(--red);color:#fff;border-style:solid}
+.note{font-size:14px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td,th{border:1px solid var(--line);padding:9px;vertical-align:top;text-align:left}
+th{background:#efe7d6}
+.tablewrap{overflow-x:auto}
+.step{display:flex;gap:12px;align-items:flex-start}
+.num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:bold}
+.step>div:last-child{flex:1}
+.saved{position:fixed;bottom:14px;right:14px;background:var(--green);color:#fff;padding:8px 14px;border-radius:20px;font-size:14px;opacity:0;transition:opacity .3s;z-index:20}
+.saved.on{opacity:1}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:12px 0}
+summary{cursor:pointer;font-weight:bold}
+.vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.vocab div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15.5px}
+.vocab b{color:var(--green)}
+footer{padding:40px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+
+.rubriques{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:18px 0 8px}
+.rubriques div{background:#fff;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:10px;padding:10px 14px;font-size:16px;line-height:1.5}
+.rubriques b{display:block;font-size:18px;margin-bottom:4px;color:var(--ink)}
+.rep-global{display:inline-flex;align-items:center;gap:0;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:#fff;margin:10px 0 4px;flex-wrap:wrap}
+.rep-global>span{padding:8px 12px;font-size:14px;font-weight:700}
+.rep-global button{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;padding:10px 14px;min-height:42px;border:0;border-left:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;margin:0;border-radius:0}
+.rep-global button:hover{background:var(--gold)}
+.corrige{margin-top:12px}
+.paire-rep{display:inline-flex;flex-wrap:wrap;gap:0;margin-top:8px;border:2px solid var(--ink);border-radius:10px;overflow:hidden}
+.paire-rep button{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;padding:10px 14px;min-height:42px;border:0;cursor:pointer;background:#fff;color:var(--ink);margin:0;border-radius:0}
+.paire-rep button+button{border-left:2px solid var(--ink)}
+.corrige:not(.ouvert) .rep-off,.corrige.ouvert .rep-on{background:var(--ink);color:#fff}
+.corr-body{display:none;margin-top:10px;background:var(--corr-fond);border:1px solid #c6ddd3;border-radius:10px;padding:12px 16px;font-size:16px}
+.corrige.ouvert .corr-body{display:block}
+.meteo{background:#faf5fc;border:1px solid #e3d3ea;border-radius:10px;padding:14px 16px;margin:14px 0}
+.meteo h3{margin:0 0 8px;font-size:18px;color:#5b2d6e}
+.meteo .choix{display:flex;flex-wrap:wrap;gap:6px}
+.meteo .choix button{background:#fff;color:var(--ink);border:1px solid #d9c6e2}
+.meteo .choix button.sel{background:#5b2d6e;color:#fff;border-color:#5b2d6e}
+@media(max-width:390px){body{font-size:16px}.hero h1{font-size:32px}.rubriques{grid-template-columns:1fr}nav a{padding:12px 10px}}
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <small class="sans">Cours de français · Étude croisée</small>
+  <h1>Les formes <em>qui parlent</em></h1>
+  <p>André Malraux, <i>Les Voix du silence</i> · Ernst Gombrich, <i>L'Art et l'Illusion</i> et <i>Histoire de l'art</i><br>Le langage de l'art, l'art du langage</p>
+  <div class="hook">Une tête de dieu sourit, sculptée dans la pierre d'un temple d'Angkor. Les fidèles ont disparu, la jungle a recouvert le temple, puis elle a été déblayée. Le sourire est toujours là. À qui s'adresse-t-il, maintenant ?</div>
+  <div class="who sans"><input id="prenom" data-save="prenom" placeholder="Votre prénom" aria-label="Votre prénom"></div>
+ </div>
+</header>
+
+<nav class="sans">
+ <a href="#defi">Le défi</a><a href="#duel">1. Le duel</a><a href="#concepts">2. Les 4 clés</a><a href="#lunettes">3. Les lunettes</a><a href="#citations">4. Citations</a><a href="#texte">5. Lire Malraux</a><a href="#english">6. Lire Gombrich</a><a href="#quiz">7. Quiz</a><a href="#atelier">8. Atelier</a><a href="#dissert">9. Dissertation</a><a href="#mission">Mission finale</a><a href="#carnet">Mon carnet</a><a href="#prof">Espace enseignant</a>
+</nav>
+
+<main class="wrap">
+
+<section id="defi">
+ <div class="kicker sans">Ouverture</div>
+ <h2>Pourquoi ce cours va vous servir longtemps</h2>
+
+ <div class="rubriques" aria-label="Cadre de la séquence">
+  <div><b>Thème</b>Poétique des formes et du verbe : le langage de l'art chez Gombrich et Malraux, avec Benjamin et Barthes.</div>
+  <div><b>Niveau</b>Lycée, lettres et philosophie de l'art (première, terminale, classes préparatoires).</div>
+  <div><b>Problématique</b>Le langage de l'art se réduit-il à l'exploration d'un espace réel, ou invente-t-il un monde contre le temps ?</div>
+  <div><b>Objectifs</b>Manier schème et correction, métamorphose, aura, mort de l'auteur ; confronter deux regards sur une même œuvre ; conduire une explication et une dissertation ; écrire à la manière de Gombrich et de Malraux.</div>
+  <div><b>Ancrage culturel</b>Gombrich, <i>Histoire de l'art</i> et <i>L'Art et l'Illusion</i> ; Malraux, <i>Les Voix du silence</i>, <i>La Métamorphose des dieux</i>, <i>Le Musée imaginaire</i> ; Benjamin ; Barthes ; œuvres : Nebamun, Giotto, Bayon, masque Fang, Joconde, Chartres.</div>
+ </div>
+ <div class="meteo sans" id="meteo">
+  <h3>Météo de la classe</h3>
+  <p class="note">Avant de commencer : comment vous sentez-vous face à ce cours ?</p>
+  <div class="choix" id="meteochoix">
+   <button type="button" data-m="soleil">Soleil : prêt</button>
+   <button type="button" data-m="nuage">Nuage : un peu perdu</button>
+   <button type="button" data-m="pluie">Pluie : besoin d'aide</button>
+   <button type="button" data-m="orage">Orage : bloqué</button>
+  </div>
+  <p class="fb" id="meteofb"></p>
+ </div>
+ <div class="rep-global sans" role="group" aria-label="Réponses">
+  <span>Réponses :</span>
+  <button type="button" id="toutAfficher">Tout afficher</button>
+  <button type="button" id="toutCacher">Tout cacher</button>
+ </div>
+ <p>Un tableau ne dit pas un mot. Pourtant, depuis des siècles, écrivains, historiens et philosophes remplissent des bibliothèques pour le faire parler. Ce cours vous place au cœur d'un paradoxe que vous retrouverez dans toutes les études littéraires : <b>comment des mots peuvent-ils dire ce qu'une image montre ?</b></p>
+ <p>Deux guides pour l'enquête, et ils ne sont pas d'accord :</p>
+ <div class="duo">
+  <div class="card g"><span class="tag tg sans">Le décodeur</span><h3 style="margin-top:4px">Ernst Gombrich (1909-2001)</h3><p>Historien né à Vienne, installé à Londres, il écrit en anglais <i>The Story of Art</i> (1950), l'un des livres d'art les plus lus au monde. Pour lui, l'art est un langage qui <b>s'apprend</b>, avec une grammaire, des habitudes et des corrections.</p></div>
+  <div class="card m"><span class="tag tm sans">Le prophète</span><h3 style="margin-top:4px">André Malraux (1901-1976)</h3><p>Romancier (<i>La Condition humaine</i>, prix Goncourt 1933), aventurier, résistant, premier ministre des Affaires culturelles. Dans <i>Les Voix du silence</i> (1951) et <i>La Métamorphose des dieux</i>, il interroge la mort, le sacré, et ce que l'art fait contre le temps. Les <i>Antimémoires</i> (1967) prolongent cette méditation sous une forme littéraire.</p></div>
+ </div>
+ <div class="card">
+  <b>À la fin du cours, vous saurez :</b>
+  <ul>
+   <li>analyser une œuvre de deux façons opposées, puis choisir et défendre la vôtre ;</li>
+   <li>manier quatre concepts que l'on retrouve partout en lettres : schème, métamorphose, aura, mort de l'auteur ;</li>
+   <li>conduire une explication de texte sur un passage littéraire de Malraux (ouverture des <i>Antimémoires</i>) ;</li>
+   <li>analyser le style d'un texte d'idées, celui de Gombrich, avec le vocabulaire de l'analyse d'œuvre ;</li>
+   <li>construire une dissertation complète, de l'accroche à l'ouverture.</li>
+  </ul>
+ </div>
+ <p class="sans" style="margin-bottom:0"><b>Ma progression</b></p>
+ <div class="progress"><div id="bar"></div></div>
+ <p class="note sans" id="bartxt">0 activité réussie sur 6</p>
+ <p class="note sans">Tout ce que vous écrivez est enregistré automatiquement sur cet appareil. Vous le retrouverez dans « Mon carnet », d'où vous pourrez l'exporter.</p>
+</section>
+
+<section id="duel">
+ <div class="kicker sans">Chapitre 1</div>
+ <h2>Le duel : une même œuvre, deux regards</h2>
+ <p>Choisissez une œuvre, regardez-la longuement, puis écoutez chacun des deux auteurs. Remarquez <b>ce qu'ils disent</b>, mais surtout <b>comment ils le disent</b> : c'est toute notre problématique.</p>
+ <div class="sans" id="duelbtns"></div>
+ <div class="card">
+  <div class="art">
+   <figure><img id="dimg" src="img/egypte.jpg" alt=""><figcaption id="dcap"></figcaption></figure>
+   <div>
+    <span class="tag tg sans">Gombrich explique</span><p id="dg"></p>
+    <span class="tag tm sans">Malraux médite</span><p id="dm"></p>
+   </div>
+  </div>
+ </div>
+ <p class="note sans">Les textes du duel sont des réécritures pédagogiques dans l'esprit de chaque auteur, pas des citations.</p>
+ <div class="card"><b>À vous :</b> pour l'œuvre affichée, quelle phrase vous la fait le mieux <i>comprendre</i> ? Laquelle vous la fait le mieux <i>ressentir</i> ? Justifiez en deux lignes.
+  <textarea data-save="duel" placeholder="Pour ... je retiens surtout ... parce que ..."></textarea></div>
+ <h3>Le tableau qui résume tout</h3>
+ <div class="tablewrap"><table>
+  <tr><th></th><th>Gombrich</th><th>Malraux</th></tr>
+  <tr><td><b>Le langage de l'art</b><br><span class="note">comment l'œuvre parle</span></td><td>Un code transmis : l'artiste part d'un modèle hérité et le corrige face au réel.</td><td>Une voix contre la mort : l'œuvre est la réponse de l'homme au néant.</td></tr>
+  <tr><td><b>L'art du langage</b><br><span class="note">comment l'auteur écrit</span></td><td>Clair, rationnel, pédagogique. Le mot sert l'image.</td><td>Lyrique, fragmentaire, incantatoire. Le mot recrée le choc.</td></tr>
+  <tr><td><b>L'œuvre et son époque</b></td><td>On la comprend par son contexte, ses commanditaires, ses problèmes techniques.</td><td>Elle échappe à son époque et entre dans le « Musée imaginaire ».</td></tr>
+  <tr><td><b>Le lecteur visé</b></td><td>Tout le monde : Gombrich a d'abord écrit pour les jeunes.</td><td>Celui qui accepte d'être bousculé, ému, désorienté.</td></tr>
+ </table></div>
+</section>
+
+<section id="concepts">
+ <div class="kicker sans">Chapitre 2</div>
+ <h2>Les 4 clés qui ouvrent toutes les portes</h2>
+ <p>Touchez une carte pour la retourner. Essayez d'abord de deviner la définition à voix haute.</p>
+ <div class="grid3">
+  <div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">Schème & correction<span class="sans">Gombrich</span></div><div class="b">L'artiste ne part jamais de rien : il reprend une formule héritée (le schème) et la modifie en la confrontant au réel (la correction). L'innovation naît de la tradition. Idée développée dans <i>Art and Illusion</i> (1960).</div></div></div>
+  <div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">Métamorphose<span class="sans">Malraux</span></div><div class="b">Quand une civilisation meurt, ses œuvres survivent en changeant de sens : l'idole devient œuvre d'art. C'est ce qui rend possible le « Musée imaginaire », où les œuvres de tous les temps dialoguent.</div></div></div>
+  <div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">Aura<span class="sans">Walter Benjamin, 1936</span></div><div class="b">Le caractère unique d'une œuvre, liée à un lieu et à un moment (« ici et maintenant »). La photographie et la reproduction en série la font décliner.</div></div></div>
+  <div class="flip" onclick="this.classList.toggle('on')"><div class="in"><div class="f">Mort de l'auteur<span class="sans">Roland Barthes, 1968</span></div><div class="b">Le sens d'un texte ne dépend pas de l'intention de son auteur mais de sa lecture. Un texte est tissé de citations et de codes qui existaient avant lui.</div></div></div>
+ </div>
+ <div class="card"><b>Pour ne jamais les oublier :</b> deux auteurs qui croient en quelque chose (Gombrich en la tradition, Malraux au sacré), puis deux auteurs qui font naître le doute (Benjamin sur l'unicité de l'œuvre, Barthes sur l'autorité de l'auteur). <b>La foi, puis le soupçon</b> : vous tenez déjà le squelette d'une dissertation.</div>
+ <div class="card"><b>Le paradoxe à méditer :</b> le Musée imaginaire de Malraux repose sur la photographie. C'est la même technique qui, selon Benjamin, fait décliner l'aura. Le rêve de l'un est-il la perte de l'autre ?
+  <textarea data-save="paradoxe" placeholder="Je pense que ..."></textarea></div>
+</section>
+
+<section id="lunettes">
+ <div class="kicker sans">Chapitre 3 · Activité 1</div>
+ <h2>Chaussez les bonnes lunettes</h2>
+ <p>Chaque étiquette sonne plutôt <b style="color:var(--blue)">Gombrich</b> ou plutôt <b style="color:var(--red)">Malraux</b>. Touchez-la une fois pour la passer en bleu, deux fois pour le rouge, trois fois pour l'effacer. Puis vérifiez.</p>
+ <div class="sort sans" id="sort"></div>
+ <button onclick="checkSort()">Vérifier</button> <span class="fb sans" id="sortfb"></span>
+</section>
+
+<section id="citations">
+ <div class="kicker sans">Chapitre 4</div>
+ <h2>Les citations à avoir en poche</h2>
+ <p>Une citation n'est pas une décoration : elle arrive au bout d'un raisonnement, comme une preuve. Les voici, avec leur source.</p>
+ <blockquote>« Disons nettement, tout d'abord, qu'à la vérité, “l'Art” n'a pas d'existence propre. Il n'y a que des artistes. »<cite class="sans">Ernst Gombrich, <i>Histoire de l'art</i>, ouverture de l'introduction (traduction publiée). En anglais : « There really is no such thing as Art. There are only artists. »</cite></blockquote>
+ <blockquote>« L'art est un anti-destin. »<cite class="sans">André Malraux, <i>Les Voix du silence</i> (1951), IVe partie, « La Monnaie de l'Absolu ». Les dernières pages évoquent « ce long dialogue des métamorphoses et des résurrections » : l'art fait entendre, à travers les siècles, un chant discontinu des résurrections (paraphrase de commentaire, hors guillemets).</cite></blockquote>
+ <blockquote>« Le plus grand mystère n'est pas que nous soyons jetés au hasard entre la profusion de la matière et celle des astres ; c'est que, dans cette prison, nous tirions de nous-mêmes des images assez puissantes pour nier notre néant. »<cite class="sans">André Malraux, <i>Les Noyers de l'Altenburg</i> (1943) : un personnage du roman formule cette idée</cite></blockquote>
+ <blockquote>« Il n'y a pas de grandes personnes… »<cite class="sans">André Malraux, <i>Antimémoires</i>, ouverture : c'est la leçon qu'un vieux prêtre tire de quinze ans de confessions</cite></blockquote>
+ <blockquote>« Le musée […] est une confrontation de métamorphoses. »<cite class="sans">André Malraux, <i>Les Voix du silence</i> (1951). Paraphrase : selon Malraux, le Musée imaginaire fait dialoguer les œuvres entre elles, et non plus chacune avec son époque (<i>Le Musée imaginaire</i>, 1947 ; repris dans <i>Les Voix du silence</i>).</cite></blockquote>
+ <blockquote>« […] à l'époque de la reproductibilité technique, ce qui dépérit dans l'œuvre d'art, c'est son aura. »<cite class="sans">Walter Benjamin, <i>L'Œuvre d'art à l'époque de sa reproductibilité technique</i> (1935-1939), traduction Folio (Gandillac et Rochlitz)</cite></blockquote>
+ <blockquote>« Le texte est un tissu de citations, issues des mille foyers de la culture. »<cite class="sans">Roland Barthes, « La mort de l'auteur » (1968), repris dans <i>Le Bruissement de la langue</i></cite></blockquote>
+ <p class="note sans">Réflexe de chercheur : avant de citer à l'écrit, vérifiez la phrase exacte dans votre édition et notez la page.</p>
+ <div class="card"><b>Défi mémoire :</b> cachez l'écran, puis réécrivez de mémoire les six idées ci-dessus, avec leurs auteurs.
+  <textarea data-save="memoire" placeholder="1. Gombrich : ..."></textarea></div>
+</section>
+
+<section id="texte">
+ <div class="kicker sans">Chapitre 5 · Activité 2</div>
+ <h2>Lire Malraux de près : l'explication de texte</h2>
+ <p>Les <i>Antimémoires</i> s'ouvrent sur une scène saisissante : en 1944, dans le maquis, Malraux interroge un aumônier qui a confessé des gens pendant quinze ans. Que lui a appris l'âme humaine ? Le prêtre répond d'abord que les gens sont plus malheureux qu'on ne le croit, puis lâche cette phrase : « il n'y a pas de grandes personnes ».</p>
+ <div class="card m">
+  <b>Le texte à étudier</b>
+  <p class="note sans">Recopiez ici l'extrait que votre professeur vous a donné (l'ouverture, ou un passage sur l'Inde, l'Égypte ou les grottes d'Elephanta).</p>
+  <textarea data-save="extrait" style="min-height:160px" placeholder="Collez ou recopiez l'extrait ici..."></textarea>
+ </div>
+ <p>Avancez en cinq temps. Chaque réponse est enregistrée.</p>
+ <div class="card"><div class="step"><div class="num sans">1</div><div><b>Première impression.</b> Qu'est-ce qui vous surprend, vous dérange ou vous touche ? Notez trois mots, sans vous censurer.<textarea data-save="ex1"></textarea></div></div></div>
+ <div class="card"><div class="step"><div class="num sans">2</div><div><b>Situer.</b> Où et quand sommes-nous ? Qui parle ? Le passage est-il un souvenir, une méditation, un dialogue, ou tout à la fois ?<textarea data-save="ex2"></textarea></div></div></div>
+ <div class="card"><div class="step"><div class="num sans">3</div><div><b>Le montage.</b> Repérez les sauts : d'un lieu à un autre, d'une époque à une autre, du récit à la réflexion. Malraux écrit comme un monteur de cinéma. Que produit chaque coupe ?<textarea data-save="ex3"></textarea></div></div></div>
+ <div class="card"><div class="step"><div class="num sans">4</div><div><b>Le style.</b> Relevez une phrase courte et frappante, une image, et un mot du lexique de la mort ou du sacré. Quel effet produisent-ils sur le lecteur ?<textarea data-save="ex4"></textarea></div></div></div>
+ <div class="card"><div class="step"><div class="num sans">5</div><div><b>Le sens.</b> En une phrase : pourquoi ce passage est-il « anti » des mémoires classiques ? Que préfère Malraux à l'anecdote personnelle ?<textarea data-save="ex5"></textarea></div></div></div>
+ <button onclick="checkExpl()">J'ai terminé mon explication</button> <span class="fb sans" id="explfb"></span>
+ <div class="corrige sans"><div class="paire-rep" role="group" aria-label="Réponse"><button type="button" class="rep-on" aria-pressed="false">Afficher la réponse</button><button type="button" class="rep-off" aria-pressed="true">Cacher la réponse</button></div><div class="corr-body"><p><b>Coup de pouce :</b> la phrase de l'aumônier renverse une évidence : les adultes ne sont pas plus sages que les enfants. Malraux ne commente pas sa propre vie, il donne la parole à quelqu'un d'autre pour ouvrir une question universelle (qu'est-ce qu'un homme ?). Le titre « Antimémoires » prend ici son sens : l'auteur s'efface derrière ce qui le dépasse. Pensez aussi au cadre, la guerre et le maquis, où la mort est partout présente.</p></div></div>
+</section>
+
+<section id="english">
+ <div class="kicker sans">Chapitre 6 · Activité 3</div>
+ <h2>Lire Gombrich de près : l'art d'expliquer</h2>
+ <p>Gombrich a d'abord écrit pour de jeunes lecteurs. Sa clarté n'a rien de naïf : c'est un style, avec ses choix et ses effets. Le lire comme on lit un écrivain, c'est découvrir que la prose d'idées est aussi de la littérature.</p>
+ <blockquote>« Disons nettement, tout d'abord, qu'à la vérité, “l'Art” n'a pas d'existence propre. Il n'y a que des artistes. »<cite class="sans">E. H. Gombrich, <i>Histoire de l'art</i>, ouverture de l'introduction (traduction publiée)</cite></blockquote>
+ <div class="card g"><b>Observez cette première phrase.</b> Elle est courte et frappante, et elle construit une opposition (Art / artistes) autour d'une majuscule. Quel est l'effet de cette ouverture sur le lecteur ? En quoi est-ce déjà une thèse ?
+  <textarea data-save="phrase1" placeholder="Cette phrase surprend parce que ..."></textarea></div>
+ <h3>Les procédés de l'explication</h3>
+ <div class="vocab sans">
+  <div><b>La phrase brève</b> : elle pose une idée nette, facile à retenir</div>
+  <div><b>L'adresse au lecteur</b> : « nous », « vous », on avance ensemble</div>
+  <div><b>L'exemple précis</b> : une œuvre, une date, un détail visible</div>
+  <div><b>La comparaison familière</b> : relier l'œuvre lointaine à l'expérience quotidienne</div>
+  <div><b>La question rhétorique</b> : faire naître la curiosité avant de répondre</div>
+  <div><b>Le connecteur logique</b> : donc, pourtant, c'est pourquoi… le raisonnement se voit</div>
+ </div>
+ <h3>Le lexique de l'analyse d'œuvre</h3>
+ <div class="vocab sans">
+  <div><b>la perspective</b> : l'illusion de la profondeur</div>
+  <div><b>le raccourci</b> : un corps vu en profondeur, raccourci</div>
+  <div><b>le commanditaire</b> : celui qui commande et paie l'œuvre</div>
+  <div><b>la convention</b> : une règle partagée par une époque</div>
+  <div><b>le sfumato</b> : le contour estompé, chez Léonard</div>
+  <div><b>la composition</b> : l'organisation des formes dans l'espace</div>
+  <div><b>stylisé</b> : simplifié selon une règle, non imité du réel</div>
+  <div><b>le modelé</b> : le rendu du volume par l'ombre et la lumière</div>
+ </div>
+ <h3>Vérification éclair</h3>
+ <div id="vq"></div>
+ <h3>À vous d'écrire</h3>
+ <div class="card g"><span class="tag tg sans">Écriture</span>
+  <p>Choisissez une œuvre du chapitre 1. En 80 à 120 mots, expliquez-la <b>comme Gombrich</b> à un élève de quatrième : quand, qui, quel problème l'artiste a résolu. Employez au moins quatre mots du lexique de l'analyse.</p>
+  <textarea data-save="english" id="eng" oninput="cnt('eng')" placeholder="Vers 1305, Giotto peint à Padoue une Lamentation..."></textarea><div class="count sans" id="ceng">0 mot</div>
+  <button onclick="checkEng()">Vérifier mon texte</button> <span class="fb sans" id="engfb"></span>
+ </div>
+ <div class="card m"><span class="tag tm sans">Comparer</span> Prenez une phrase de votre texte et réécrivez-la à la manière de Malraux. Qu'avez-vous dû changer : la longueur, les images, le vocabulaire, le rapport au lecteur ?
+  <textarea data-save="traduction" placeholder="Phrase Gombrich : ... / Phrase Malraux : ... / J'ai changé ..."></textarea></div>
+ <p class="note sans">Curiosité : Gombrich a écrit son livre en anglais (<i>The Story of Art</i>, 1950). Les élèves anglicistes peuvent comparer l'original et la traduction française.</p>
+</section>
+
+<section id="quiz">
+ <div class="kicker sans">Chapitre 7 · Activité 4</div>
+ <h2>Quiz éclair</h2>
+ <p class="note sans">Il faut au moins 6 bonnes réponses sur 8 pour valider l'activité.</p>
+ <div id="quizbox"></div>
+ <p class="fb sans" id="quizscore"></p>
+ <button class="ghost" onclick="resetQuiz()">Recommencer le quiz</button>
+</section>
+
+<section id="atelier">
+ <div class="kicker sans">Chapitre 8 · Activité 5</div>
+ <h2>L'atelier : écrire à la manière de…</h2>
+ <p>Choisissez une œuvre que vous aimez : la Joconde, un graffiti de votre ville, une pochette d'album, un clip, une statue. Écrivez-la deux fois.</p>
+ <div class="duo">
+  <div class="card g"><span class="tag tg sans">Version Gombrich</span>
+   <p class="note sans">Phrases courtes. Contexte, technique, problème résolu par l'artiste. Aucun adjectif inutile.</p>
+   <textarea data-save="atg" id="atg" oninput="cnt('atg')" placeholder="Vers 1503, Léonard cherche à résoudre un problème : comment rendre un visage vivant ?..."></textarea><div class="count sans" id="catg">0 mot</div></div>
+  <div class="card m"><span class="tag tm sans">Version Malraux</span>
+   <p class="note sans">Rythme ample, images fortes. La mort, le temps, le sacré. Osez la phrase qui sonne.</p>
+   <textarea data-save="atm" id="atm" oninput="cnt('atm')" placeholder="Elle sourit depuis cinq siècles à des foules qui ne la voient plus..."></textarea><div class="count sans" id="catm">0 mot</div></div>
+ </div>
+ <button onclick="atelier()">J'ai fini mes deux versions</button> <span class="fb sans" id="atfb"></span>
+ <div class="card"><b>Réflexion :</b> laquelle de vos deux versions fait le plus <i>voir</i> l'œuvre ? Laquelle la fait le plus <i>comprendre</i> ? Si ce n'est pas la même, vous venez de retrouver par vous-même la problématique du cours.</div>
+</section>
+
+<section id="dissert">
+ <div class="kicker sans">Chapitre 9 · Activité 6</div>
+ <h2>Construire la dissertation</h2>
+ <blockquote>Sujet : « Le langage de l'art n'est-il qu'une exploration de l'espace réel ? »</blockquote>
+ <p><b>Problématique proposée :</b> les mots peuvent-ils traduire le langage muet des formes, et le style de celui qui écrit (la clarté du pédagogue, le lyrisme de l'écrivain) transforme-t-il ce que nous voyons ?</p>
+ <h3>L'introduction en cinq gestes</h3>
+ <ol>
+  <li><b>L'accroche :</b> une image précise, jamais « De tout temps, les hommes… ». Par exemple, Giotto à Padoue face aux visages d'Angkor.</li>
+  <li><b>L'analyse des termes :</b> « langage », « exploration », « espace réel ». Que suppose le petit mot « ne… que » ?</li>
+  <li><b>La problématique :</b> une vraie question, qui naît d'une tension.</li>
+  <li><b>Le corpus :</b> Gombrich et Malraux, présentés en une phrase chacun.</li>
+  <li><b>L'annonce du plan :</b> fluide, sans « dans une première partie ».</li>
+ </ol>
+ <h3>Le plan</h3>
+ <div class="card g"><span class="tag tg sans">I. La foi dans le code</span><p><b>L'art comme langage appris</b> (Gombrich). L'artiste égyptien dessine ce qu'il sait plutôt que ce qu'il voit. Giotto fait basculer la peinture vers la conquête de l'espace. Avec le schème et la correction, l'innovation naît de la tradition.</p></div>
+ <div class="card m"><span class="tag tm sans">II. La foi dans le sacré</span><p><b>L'art comme victoire sur la mort</b> (Malraux). La métamorphose arrache l'œuvre à son temps ; le Musée imaginaire fait dialoguer Angkor et Chartres. Le style lyrique et fragmentaire des écrits sur l'art imite ce montage.</p></div>
+ <div class="card"><span class="tag tb sans">III. L'ère du soupçon</span><p><b>L'art à l'épreuve de la modernité.</b> Pour Benjamin, la reproduction qui rend possible le Musée imaginaire fait décliner l'aura. Pour Barthes, l'œuvre est un tissu de codes, ce qui, paradoxalement, nous ramène au schème de Gombrich.</p></div>
+ <h3>L'art de la transition</h3>
+ <p>Une bonne transition ne dit pas « après avoir vu X, nous verrons Y ». Elle fait surgir une <b>contradiction</b> qui rend la partie suivante nécessaire. Remettez les étapes dans l'ordre avec les flèches :</p>
+ <div id="order"></div>
+ <button onclick="checkOrder()">Vérifier l'ordre</button> <span class="fb sans" id="orderfb"></span>
+ <div class="card"><b>À vous :</b> sur le même modèle (bilan, limite, nécessité), rédigez la transition de la partie II à la partie III.
+  <textarea data-save="transition" placeholder="Malraux arrache l'œuvre au temps... Mais ce Musée imaginaire repose sur... Il faut donc..."></textarea></div>
+ <h3>La conclusion et l'ouverture</h3>
+ <p>Faites d'abord le bilan des trois parties en trois phrases, puis répondez nettement à la question posée. Pour l'ouverture, ce débat en appelle un plus vaste : <b>l'art est-il imitation ou invention ?</b> Une piste pour conclure en beauté, avec un chiasme : l'art invente en imitant, et imite en inventant.</p>
+</section>
+
+<section id="mission">
+ <div class="mission">
+  <h3>Mission finale : votre propre Musée imaginaire</h3>
+  <p>Malraux rêvait d'un musée sans murs. Créez le vôtre.</p>
+  <ol>
+   <li>Choisissez <b>5 œuvres</b> de cultures et d'époques différentes (peinture, sculpture, photo, clip, pochette d'album, art urbain…).</li>
+   <li>Pour chacune, rédigez <b>une fiche Gombrich</b> de 3 lignes : contexte, technique, problème résolu.</li>
+   <li>Écrivez ensuite <b>un texte Malraux</b> d'une page, qui les fait toutes dialoguer : qu'ont-elles à dire ensemble contre le temps ?</li>
+   <li>Terminez par <b>un paragraphe Benjamin ou Barthes</b> : en les voyant sur un écran, avez-vous perdu quelque chose ?</li>
+   <li>Bonus : un cartel de musée de 50 mots pour chaque œuvre, comme ceux qu'on lit à côté des tableaux.</li>
+  </ol>
+  <p>Format libre : diaporama, page web, carnet illustré, podcast, vidéo. Si vous poursuivez des études de lettres, gardez-le : ce sera votre premier dossier de recherche.</p>
+  <p><b>Ma liste de vérification</b></p>
+  <div class="sans" id="checklist"></div>
+ </div>
+ <div class="card"><b>Pour aller plus loin :</b> lisez l'<i>Histoire de l'art</i> chapitre par chapitre, avec les illustrations sous les yeux. Dans <i>Les Voix du silence</i>, lisez les pages sur le Musée imaginaire avec un carnet. Dans les <i>Antimémoires</i>, suivez le passage d'un souvenir à une méditation. Puis allez voir des œuvres en vrai, au musée : c'est là que vous saurez ce que Benjamin appelait l'aura.</div>
+</section>
+
+<section id="carnet">
+ <div class="kicker sans">Mon carnet</div>
+ <h2>Tout mon travail, au même endroit</h2>
+ <p>Vos réponses sont enregistrées sur cet appareil, dans ce navigateur. Exportez-les pour les garder ou les envoyer à votre professeur.</p>
+ <button onclick="exportTxt()">Télécharger mon carnet (.txt)</button>
+ <button onclick="copyAll()">Copier tout le texte</button>
+ <button class="ghost" onclick="if(confirm('Effacer toutes vos réponses sur cet appareil ?')){localStorage.removeItem(KEY);location.reload()}">Tout effacer</button>
+ <span class="fb sans" id="carnetfb"></span>
+ <div class="card"><pre id="preview" style="white-space:pre-wrap;font-family:inherit;font-size:15px;margin:0;max-height:300px;overflow:auto"></pre></div>
+</section>
+
+<section id="prof">
+ <div class="kicker sans">Espace enseignant</div>
+ <h2>Guide de mise en œuvre</h2>
+ <details><summary>Progression conseillée : 6 séances de 2 heures</summary>
+  <div class="tablewrap"><table class="sans">
+   <tr><th>Séance</th><th>Contenu</th><th>Travail à la maison</th></tr>
+   <tr><td>1</td><td>Accroche Angkor, présentation des deux auteurs, duel sur 3 œuvres (ch. 1)</td><td>Lire l'introduction de Gombrich</td></tr>
+   <tr><td>2</td><td>Les 4 clés, lunettes, citations (ch. 2 à 4)</td><td>Défi mémoire, paradoxe Benjamin-Malraux</td></tr>
+   <tr><td>3</td><td>Explication guidée de l'ouverture des <i>Antimémoires</i> (ch. 5)</td><td>Rédiger l'étape 5 au propre</td></tr>
+   <tr><td>4</td><td>Étude du style de Gombrich, lexique, rédaction (ch. 6), quiz (ch. 7)</td><td>Texte explicatif de 80 à 120 mots</td></tr>
+   <tr><td>5</td><td>Atelier d'écriture double (ch. 8), introduction de dissertation</td><td>Lancer la mission finale</td></tr>
+   <tr><td>6</td><td>Plan, transitions, conclusion (ch. 9), présentations de musées imaginaires</td><td>Rendre la mission finale</td></tr>
+  </table></div>
+ </details>
+ <div class="card"><b>Corrigé : les lunettes et le quiz</b>
+  <div class="corrige"><div class="paire-rep" role="group" aria-label="Réponse"><button type="button" class="rep-on" aria-pressed="false">Afficher la réponse</button><button type="button" class="rep-off" aria-pressed="true">Cacher la réponse</button></div><div class="corr-body"><p><b>Gombrich :</b> modèle hérité corrigé, contexte de la commande, style clair, progrès par résolution de problèmes. <b>Malraux :</b> victoire sur la mort, dieux devenus art, style lyrique et fragmentaire ; selon Malraux, les œuvres dialoguent hors du temps (paraphrase).</p>
+  <p><b>Quiz :</b> 1 anglais · 2 changement de sens · 3 aura · 4 refus de l'anecdote · 5 tissu de codes · 6 ce qu'il sait · 7 Les Voix du silence · 8 la photographie.</p></div></div>
+ </div>
+ <details><summary>Grille d'évaluation de la mission finale (sur 20)</summary>
+  <div class="tablewrap"><table class="sans">
+   <tr><th>Critère</th><th>Points</th><th>Ce qu'on attend</th></tr>
+   <tr><td>Choix des œuvres</td><td>3</td><td>5 œuvres variées (époques, cultures, supports), bien identifiées</td></tr>
+   <tr><td>Fiches Gombrich</td><td>5</td><td>Contexte exact, vocabulaire technique, problème artistique identifié</td></tr>
+   <tr><td>Texte Malraux</td><td>6</td><td>Les œuvres dialoguent vraiment ; style travaillé ; thème du temps et de la mort</td></tr>
+   <tr><td>Regard critique</td><td>3</td><td>Benjamin ou Barthes utilisé avec justesse, et pas plaqué</td></tr>
+   <tr><td>Langue et présentation</td><td>3</td><td>Correction, soin, sources des images citées</td></tr>
+   <tr><td>Bonus</td><td>+2</td><td>Cartels clairs, précis et bien écrits</td></tr>
+  </table></div>
+ </details>
+ <details><summary>Différenciation</summary>
+  <p><b>Pour les élèves en difficulté :</b> limiter le duel à 2 œuvres, donner des débuts de phrases, réduire la mission à 3 œuvres. <b>Pour les plus avancés :</b> lire un extrait de Benjamin, comparer avec <i>Art and Illusion</i> de Gombrich, rédiger la dissertation complète.</p>
+ </details>
+ <details><summary>Précautions sur les sources</summary>
+  <p>Les textes du duel sont des réécritures pédagogiques, sans guillemets. Les citations d'art de Malraux renvoient à <i>Les Voix du silence</i> et <i>La Métamorphose des dieux</i>, non aux <i>Antimémoires</i>. Vérifiez chaque citation dans votre édition. Choisissez vous-même l'extrait littéraire pour le chapitre 5.</p>
+ </details>
+</section>
+</main>
+
+<footer class="sans">
+ <p>© 2026 Madame Carole Paoli Pompougnac · CC BY-NC-ND 4.0</p>
+ <p>Cours croisé Malraux × Gombrich · Images : Wikimedia Commons
+ (<a href="https://commons.wikimedia.org/wiki/File:Tomb_of_Nebamun.jpg">Nebamun, tombe, vers 1350 av. J.-C., British Museum</a> ;
+ <a href="https://commons.wikimedia.org/wiki/File:Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj.jpg">Giotto, Lamentation, vers 1305, chapelle des Scrovegni, Padoue</a> ;
+ <a href="https://commons.wikimedia.org/wiki/File:20171127_Bayon_Temple_Angkor_Thom_4754_DxO.jpg">Visages du Bayon, Angkor Thom, fin du XIIe siècle</a> ;
+ <a href="https://commons.wikimedia.org/wiki/File:Fang_mask_Louvre_MH65-104-1.jpg">Masque Fang, Gabon, XIXe siècle, musée du Louvre</a> ;
+ <a href="https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg">Léonard de Vinci, La Joconde, vers 1503-1519, musée du Louvre</a> ;
+ <a href="https://commons.wikimedia.org/wiki/File:Chartres_-_portail_royal,_tympan_central.jpg">Portail royal de Chartres, tympan central, vers 1145-1155</a>). Domaine public ou licences ouvertes.</p>
+</footer>
+<div class="saved sans" id="saved">Enregistré</div>
+
+<script>
+const KEY='formes-qui-parlent-v3';
+let store={};try{store=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}const s=document.getElementById('saved');s.classList.add('on');clearTimeout(window._t);window._t=setTimeout(()=>s.classList.remove('on'),900);preview()}
+document.querySelectorAll('[data-save]').forEach(el=>{const k=el.dataset.save;if(store[k])el.value=store[k];el.addEventListener('input',()=>{store[k]=el.value;persist()})});
+const ACT={sort:'Lunettes',expl:'Explication',eng:'Style de Gombrich',quiz:'Quiz',atelier:'Atelier',order:'Transition'};
+const done=new Set(store._done||[]);
+function win(k){done.add(k);store._done=[...done];persist();drawBar()}
+function drawBar(){const n=done.size;document.getElementById('bar').style.width=(n/6*100)+'%';document.getElementById('bartxt').textContent=n+' activité'+(n>1?'s':'')+' réussie'+(n>1?'s':'')+' sur 6'+(n==6?' · Bravo'+(store.prenom?' '+store.prenom:'')+', cours terminé.':'')}
+drawBar();
+const W=[
+["Art égyptien","egypte.jpg","Tombe de Nebamun, Thèbes, vers 1350 av. J.-C., British Museum",
+"Le peintre égyptien ne représente pas ce qu'il voit d'un seul point de vue, mais ce qu'il sait : un œil de face dans un visage de profil, les épaules de face, les jambes de profil. Ce n'est pas de la maladresse, c'est une règle : il faut montrer chaque partie du corps sous son aspect le plus clair, pour l'éternité.",
+"Ces chasseurs ne chassent plus rien. Ils furent peints pour accompagner un mort, et ils sont restés trois mille ans dans le noir à l'attendre. Nous les regardons comme de l'art ; ils furent une prière contre la disparition."],
+["Giotto","giotto.jpg","Giotto, La Lamentation sur le Christ mort, vers 1305, chapelle des Scrovegni, Padoue",
+"Giotto reprend le vieux modèle byzantin et le corrige : il donne du poids aux corps et de la profondeur à l'espace. Les personnages vus de dos nous placent dans la scène. On assiste à un tournant : renonçant à l'écriture conventionnelle, Giotto crée l'illusion de la profondeur et d'une scène qui se déroule devant nos yeux.",
+"Pour la première fois, la douleur a un corps. Ce n'est plus Dieu qui regarde les hommes, ce sont des hommes qui pleurent un homme. Les anges hurlent dans un ciel devenu vide ; le sacré descend sur la terre."],
+["Angkor","angkor.jpg","Visages du temple du Bayon, Angkor Thom, Cambodge, fin du XIIe siècle",
+"Les sculpteurs khmers suivent des conventions précises : symétrie, paupières mi-closes, sourire serein. Pour comprendre ces visages, il faut connaître la religion du roi qui les a commandés et la fonction du temple.",
+"Les dieux sont morts, la jungle a dévoré les temples, et ces visages sourient encore. Leur sourire ne s'adresse plus à aucun fidèle. Il s'adresse à nous, voyageurs d'une autre civilisation, qui n'y croyons pas et qui pourtant nous taisons."],
+["Masque Fang","masque.jpg","Masque Fang, Gabon, XIXe siècle, musée du Louvre",
+"Le masque obéit à une fonction rituelle et à des codes formels transmis d'atelier en atelier. Il faut se défaire de nos préjugés européens : ce n'est pas un art « primitif », mais une autre grammaire des formes.",
+"Arraché à la danse, au feu, à la nuit, le voici sous la vitre d'un musée. Il ne fait plus peur aux esprits ; il fascine Picasso. C'est la métamorphose : l'objet de culte est devenu œuvre d'art."],
+["La Joconde","joconde.jpg","Léonard de Vinci, La Joconde, vers 1503-1519, musée du Louvre",
+"Léonard affronte un problème : un visage trop net paraît figé. Il estompe les contours aux coins des yeux et de la bouche, c'est le sfumato. Le spectateur doit compléter lui-même l'expression, et c'est pourquoi le sourire semble bouger.",
+"Elle sourit depuis cinq siècles à des foules qui ne la voient plus, qui la photographient. Elle n'appartient plus à Florence, ni à Léonard, ni même à la peinture : elle est devenue un visage de l'humanité."],
+["Chartres","chartres.jpg","Portail royal de la cathédrale de Chartres, tympan central, vers 1145-1155",
+"Ces statues obéissent à la forme de l'architecture : allongées comme des colonnes, elles appartiennent au bâtiment. Le sculpteur ne cherche pas encore le mouvement libre, il cherche la majesté et la lisibilité du message.",
+"Huit siècles de pluie sur ces visages, et ils attendent toujours le Jugement. Le Christ de Chartres et les visages d'Angkor ne se sont jamais connus. Dans le Musée imaginaire, ils se regardent enfin."]];
+const db=document.getElementById('duelbtns');
+W.forEach((w,i)=>{const b=document.createElement('button');b.textContent=w[0];b.onclick=()=>duel(i);db.appendChild(b)});
+function duel(i){const w=W[i];dimg.src='img/'+w[1];dimg.alt=w[2];dcap.textContent=w[2];dg.textContent=w[3];dm.textContent=w[4];[...db.children].forEach((b,j)=>b.classList.toggle('sel',j==i))}
+duel(0);
+const S=[["L'artiste corrige un modèle hérité",'g'],["L'œuvre est une victoire sur la mort",'m'],["Il faut connaître le contexte de la commande",'g'],["Les dieux sont devenus de l'art",'m'],["Style clair et pédagogique",'g'],["Style lyrique et fragmentaire",'m'],["L'art progresse en résolvant des problèmes",'g'],["Les œuvres dialoguent entre elles hors du temps",'m']].sort(()=>Math.random()-.5);
+const sb=document.getElementById('sort');
+S.forEach(s=>{const c=document.createElement('span');c.className='chip';c.textContent=s[0];c.dataset.st=0;c.onclick=()=>{c.dataset.st=(+c.dataset.st+1)%3;c.className='chip'+(c.dataset.st==1?' g1':c.dataset.st==2?' m1':'')};sb.appendChild(c)});
+function checkSort(){let ok=0;[...sb.children].forEach((c,i)=>{if((S[i][1]=='g'&&c.dataset.st==1)||(S[i][1]=='m'&&c.dataset.st==2))ok++});sortfb.textContent=ok+' / 8 bien classées.'+(ok==8?' Parfait, vous avez l\'œil.':' Relisez le tableau du chapitre 1 et réessayez.');if(ok==8)win('sort')}
+function wc(id){return (document.getElementById(id).value.trim().match(/\S+/g)||[]).length}
+function cnt(id){const n=wc(id);document.getElementById('c'+id).textContent=n+(n>1?' mots':' mot')}
+['eng','atg','atm'].forEach(cnt);
+function checkExpl(){const f=[1,2,3,4,5].filter(i=>(store['ex'+i]||'').trim().length>=15).length;if(f<5){explfb.textContent=f+' étape(s) sur 5 complétées. Écrivez au moins une vraie phrase pour chaque étape.';return}explfb.textContent='Bravo. Relisez l\'étape 5 : c\'est déjà le cœur de votre conclusion.';win('expl')}
+const TOOL=['perspective','raccourci','commanditaire','convention','sfumato','composition','stylis','modelé'];
+function checkEng(){const t=document.getElementById('eng').value.toLowerCase();const n=wc('eng');const u=TOOL.filter(w=>t.includes(w));
+if(n<80){engfb.textContent=n+' mots. Visez 80 à 120.';return}
+if(u.length<4){engfb.textContent='Bonne longueur. Mots du lexique employés : '+(u.length?u.join(', '):'aucun')+'. Il en faut 4.';return}
+engfb.textContent='Bravo : '+n+' mots et '+u.length+' termes d\'analyse ('+u.join(', ')+').';win('eng')}
+const V=[["Celui qui commande et paie une œuvre est…",["le spectateur","le commanditaire","le modèle"],1],["Le contour estompé des visages chez Léonard s'appelle…",["le sfumato","le raccourci","la perspective"],0],["Une phrase comme « Pourquoi l'Égyptien dessine-t-il ainsi ? » est…",["une anaphore","une question rhétorique","une hyperbole"],1]];
+const vq=document.getElementById('vq');
+V.forEach(q=>{const d=document.createElement('div');d.className='card q';d.innerHTML='<b>'+q[0]+'</b><div class="opts"></div>';q[1].forEach((o,j)=>{const b=document.createElement('button');b.textContent=o;b.onclick=()=>{d.querySelectorAll('button').forEach(x=>x.className='');b.className=j==q[2]?'ok':'ko';if(j!=q[2])d.querySelectorAll('button')[q[2]].className='ok'};d.querySelector('.opts').appendChild(b)});vq.appendChild(d)});
+const Q=[["En quelle langue Gombrich a-t-il écrit son Histoire de l'art ?",["En allemand","En anglais","En français"],1,"The Story of Art, 1950 : une bonne raison de le lire en version originale."],
+["Pour Malraux, la « métamorphose », c'est…",["le changement de sens d'une œuvre qui survit à sa civilisation","une technique de peinture","un genre d'autobiographie"],0,"L'idole devient œuvre d'art."],
+["Que fait décliner la reproduction en série, selon Benjamin ?",["Le prix des œuvres","L'aura","Le Musée imaginaire"],1,"L'unicité de l'œuvre, « ici et maintenant »."],
+["Pourquoi le livre de Malraux s'intitule-t-il « Antimémoires » ?",["Il y raconte son enfance en détail","Il refuse l'anecdote personnelle pour interroger la condition humaine","C'est un roman de science-fiction"],1,"Ce qui le dépasse l'intéresse plus que sa propre vie."],
+["Quelle idée de Barthes rejoint, paradoxalement, Gombrich ?",["L'œuvre comme tissu de codes déjà existants","L'auteur comme génie solitaire","L'art contre la mort"],0,"Le schème hérité n'est pas loin du tissu de citations."],
+["Selon Gombrich, le peintre égyptien représente…",["ce qu'il voit","ce qu'il sait","ce qu'il rêve"],1,"Chaque partie du corps sous son aspect le plus clair."],
+["Dans quel livre Malraux écrit-il « L'art est un anti-destin » ?",["Les Voix du silence","La Condition humaine","Antimémoires"],0,"Publié en 1951."],
+["Sur quelle technique repose le Musée imaginaire de Malraux ?",["La peinture à l'huile","La photographie","L'imprimerie de Gutenberg"],1,"D'où le paradoxe avec Benjamin."]];
+let qs=0,qa=0;const qb=document.getElementById('quizbox');
+function buildQuiz(){qb.innerHTML='';qs=0;qa=0;quizscore.textContent='';Q.forEach((q,i)=>{const d=document.createElement('div');d.className='card q';d.innerHTML='<b>'+(i+1)+'. '+q[0]+'</b><div class="opts"></div><div class="fb sans"></div>';q[1].forEach((o,j)=>{const b=document.createElement('button');b.textContent=o;b.onclick=()=>{if(d.dataset.done)return;d.dataset.done=1;qa++;if(j==q[2]){b.classList.add('ok');qs++}else{b.classList.add('ko');d.querySelectorAll('button')[q[2]].classList.add('ok')}d.querySelector('.fb').textContent=q[3];if(qa==Q.length){quizscore.textContent='Score : '+qs+' / '+Q.length+(qs>=6?' · Activité validée.':' · Il en faut 6, recommencez.');store.quiz=qs+'/8';persist();if(qs>=6)win('quiz')}};d.querySelector('.opts').appendChild(b)});qb.appendChild(d)})}
+function resetQuiz(){buildQuiz()}
+buildQuiz();
+function atelier(){const a=wc('atg'),b=wc('atm');if(a<40||b<40){atfb.textContent='Encore un effort : au moins 40 mots par version (vous en avez '+a+' et '+b+').';return}atfb.textContent='Bravo. Relisez-les à voix haute : entendez-vous la différence de rythme ?';win('atelier')}
+const O=["Bilan : Gombrich explique comment l'œil apprend à voir et la main à représenter","Limite : mais il ne dit pas pourquoi une idole dont les dieux sont morts nous bouleverse encore","Nécessité : cette question exige un autre regard, celui de Malraux"];
+let cur=[...O];do{cur.sort(()=>Math.random()-.5)}while(cur.every((t,i)=>t==O[i]));
+const ob=document.getElementById('order');
+function drawO(){ob.innerHTML='';cur.forEach((t,i)=>{const d=document.createElement('div');d.className='card';d.style.cssText='padding:8px 12px;display:flex;align-items:center;gap:8px';const s=document.createElement('span');s.style.flex='1';s.textContent=t.replace(/^\w+ : /,'');const u=document.createElement('button');u.className='ghost';u.textContent='↑';u.setAttribute('aria-label','Monter');u.onclick=()=>{if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawO()}};const dn=document.createElement('button');dn.className='ghost';dn.textContent='↓';dn.setAttribute('aria-label','Descendre');dn.onclick=()=>{if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawO()}};d.append(s,u,dn);ob.appendChild(d)})}
+drawO();
+function checkOrder(){const ok=cur.every((t,i)=>t==O[i]);orderfb.textContent=ok?'Exactement : bilan, limite, nécessité. C\'est une transition dialectique.':'Pas encore : commencez par ce que l\'on a montré, puis ce qui manque.';if(ok)win('order')}
+const CL=["5 œuvres choisies","5 fiches Gombrich","Le texte Malraux","Le paragraphe Benjamin ou Barthes","Les cartels de musée","Les sources des images"];
+const cl=document.getElementById('checklist');store.cl=store.cl||{};
+CL.forEach((c,i)=>{const l=document.createElement('label');const x=document.createElement('input');x.type='checkbox';x.checked=!!store.cl[i];x.onchange=()=>{store.cl[i]=x.checked;persist()};l.append(x,' '+c);cl.appendChild(l)});
+const LABELS={prenom:'Prénom',duel:'Ch. 1 · Le duel',paradoxe:'Ch. 2 · Le paradoxe',memoire:'Ch. 4 · Défi mémoire',extrait:'Ch. 5 · Extrait étudié',ex1:'Ch. 5 · Première impression',ex2:'Ch. 5 · Situer',ex3:'Ch. 5 · Le montage',ex4:'Ch. 5 · Le style',ex5:'Ch. 5 · Le sens',phrase1:'Ch. 6 · La première phrase',english:'Ch. 6 · Mon explication',traduction:'Ch. 6 · Réécriture',quiz:'Ch. 7 · Score au quiz',atg:'Ch. 8 · Version Gombrich',atm:'Ch. 8 · Version Malraux',transition:'Ch. 9 · Ma transition'};
+function txt(){let s='LES FORMES QUI PARLENT · Malraux × Gombrich\nCarnet de '+(store.prenom||'…')+'\nActivités réussies : '+([...done].map(k=>ACT[k]).join(', ')||'aucune')+'\n\n';for(const k in LABELS){if(k!='prenom'&&store[k])s+='== '+LABELS[k]+' ==\n'+store[k]+'\n\n'}return s}
+function preview(){document.getElementById('preview').textContent=txt()}
+preview();
+function exportTxt(){const b=new Blob([txt()],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='carnet-'+(store.prenom||'eleve').replace(/\W+/g,'-')+'.txt';document.body.appendChild(a);a.click();a.remove();carnetfb.textContent='Fichier téléchargé.'}
+
+document.querySelectorAll('.corrige').forEach(function(box){
+  var on=box.querySelector('.rep-on'), off=box.querySelector('.rep-off');
+  if(!on||!off) return;
+  function open(v){box.classList.toggle('ouvert',v);on.setAttribute('aria-pressed',v?'true':'false');off.setAttribute('aria-pressed',v?'false':'true')}
+  on.addEventListener('click',function(){open(true)});
+  off.addEventListener('click',function(){open(false)});
+});
+document.getElementById('toutAfficher').addEventListener('click',function(){document.querySelectorAll('.corrige').forEach(function(b){b.classList.add('ouvert');var on=b.querySelector('.rep-on'),off=b.querySelector('.rep-off');if(on)on.setAttribute('aria-pressed','true');if(off)off.setAttribute('aria-pressed','false')})});
+document.getElementById('toutCacher').addEventListener('click',function(){document.querySelectorAll('.corrige').forEach(function(b){b.classList.remove('ouvert');var on=b.querySelector('.rep-on'),off=b.querySelector('.rep-off');if(on)on.setAttribute('aria-pressed','false');if(off)off.setAttribute('aria-pressed','true')})});
+document.querySelectorAll('#meteochoix button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#meteochoix button').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');store.meteo=b.dataset.m;persist();var msg={soleil:'Bien : avancez à votre rythme.',nuage:'Repassez le duel (chapitre 1) et les 4 clés.',pluie:'Demandez un coup de pouce à votre professeur, ou ouvrez une réponse Afficher.',orage:'Commencez par une seule œuvre du duel, puis une seule clé.'};meteofb.textContent=msg[b.dataset.m]||''})});
+if(store.meteo){var mb=document.querySelector('#meteochoix button[data-m="'+store.meteo+'"]');if(mb)mb.click()}
+
+function copyAll(){const t=txt();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>carnetfb.textContent='Copié. Collez-le dans un mail ou un document.').catch(()=>{const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();carnetfb.textContent='Copié.'})}
+</script>
+</body>
+</html>
