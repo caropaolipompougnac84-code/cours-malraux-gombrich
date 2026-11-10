@@ -108,6 +108,42 @@ footer a{color:var(--muted)}
 .meteo .choix button.sel{background:#5b2d6e;color:#fff;border-color:#5b2d6e}
 @media(max-width:390px){body{font-size:16px}.hero h1{font-size:32px}.rubriques{grid-template-columns:1fr}nav a{padding:12px 10px}}
 
+
+.dossier{background:#fff}
+.piliers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:18px 0}
+.piliers article{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:0 2px 0 #e7dfcf}
+.piliers .num{float:left;margin:0 10px 6px 0}
+.piliers h3{margin:0 0 8px;font-size:18px;line-height:1.3}
+.piliers p{margin:0;font-size:16px}
+.conseil{background:#f0eeea;border:1px solid #e0dbd2;border-left:4px solid #8a8378;border-radius:8px;padding:12px 16px;margin:16px 0;font-size:16.5px}
+.legende{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:14px 0}
+.legende div{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15.5px}
+.hl-concept{background:#fff3a0}
+.hl-ref{background:#c8efc8}
+.hl-usage{background:#cfe4ff}
+.sommaire-dossier{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 20px 8px;margin:14px 0}
+.sommaire-dossier ol{margin:0 0 8px;padding-left:22px}
+.sommaire-dossier a{color:var(--ink)}
+.sujet-box{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0;text-align:center}
+.sujet-box p{margin:8px 0}
+.sujet-box .libelle{font-size:22px;font-style:italic;margin:14px 0}
+.extrait{font-size:17.5px;text-align:justify;hyphens:auto}
+.extrait p{margin:0 0 14px}
+.plan-part{margin:16px 0}
+.plan-part h3{margin:8px 0 10px}
+.plan-part ul{margin:6px 0 10px}
+.statut{display:inline-block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:12px;background:#efe7d6;color:var(--ink)}
+.biblio p{margin:0 0 8px;padding-left:1.2em;text-indent:-1.2em}
+.glossaire-table td:first-child{font-weight:bold;white-space:nowrap}
+@media(max-width:700px){
+  .stack-table thead{display:none}
+  .stack-table tr{display:block;border:1px solid var(--line);border-radius:8px;margin:0 0 12px;background:#fff}
+  .stack-table td,.stack-table th{display:block;border:0;border-bottom:1px solid var(--line)}
+  .stack-table td:last-child{border-bottom:0}
+  .stack-table td:before{content:attr(data-label);display:block;font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .glossaire-table td:first-child{white-space:normal}
+}
+
 </style>
 </head>
 <body>
@@ -125,7 +161,7 @@ footer a{color:var(--muted)}
 </header>
 
 <nav class="sans">
- <a href="#defi">Le défi</a><a href="#duel">1. Le duel</a><a href="#concepts">2. Les 4 clés</a><a href="#lunettes">3. Les lunettes</a><a href="#citations">4. Citations</a><a href="#texte">5. Lire Malraux</a><a href="#english">6. Lire Gombrich</a><a href="#quiz">7. Quiz</a><a href="#atelier">8. Atelier</a><a href="#dissert">9. Épreuve HLP</a><a href="#mission">Mission finale</a><a href="#carnet">Mon carnet</a><a href="#prof">Espace enseignant</a>
+ <a href="#defi">Le défi</a><a href="#duel">1. Le duel</a><a href="#concepts">2. Les 4 clés</a><a href="#lunettes">3. Les lunettes</a><a href="#citations">4. Citations</a><a href="#texte">5. Lire Malraux</a><a href="#english">6. Lire Gombrich</a><a href="#quiz">7. Quiz</a><a href="#atelier">8. Atelier</a><a href="#dissert">9. Épreuve HLP</a><a href="#mission">Mission finale</a><a href="#dossier">Dossier</a><a href="#carnet">Mon carnet</a><a href="#prof">Espace enseignant</a>
 </nav>
 
 <main class="wrap">
@@ -377,6 +413,445 @@ footer a{color:var(--muted)}
  <div class="card"><b>Pour aller plus loin :</b> lisez l'<i>Histoire de l'art</i> chapitre par chapitre, avec les illustrations sous les yeux. Dans <i>Les Voix du silence</i>, lisez les pages sur le Musée imaginaire avec un carnet. Dans les <i>Antimémoires</i>, suivez le passage d'un souvenir à une méditation. Puis allez voir des œuvres en vrai, au musée : c'est là que vous saurez ce que Benjamin appelait l'aura.</div>
 </section>
 
+
+<section id="dossier" class="dossier">
+ <div class="kicker sans">Dossier de révision et atelier de dissertation</div>
+ <h2>Poétique des formes et du verbe : Gombrich, Malraux, Benjamin, Barthes</h2>
+ <p>Ce dossier de référence accompagne la préparation d'une dissertation de littérature et de philosophie de l'art. Il réunit quatre penseurs qui ont, chacun à sa manière, interrogé le langage de l'art : Ernst Gombrich, André Malraux, Walter Benjamin et Roland Barthes.</p>
+
+ <div class="piliers" aria-label="Les cinq piliers du dossier">
+  <article>
+   <div class="num sans">1</div>
+   <h3>La boîte à outils théorique</h3>
+   <p>La fiche notions définit chaque concept, le rattache à l'œuvre où il est formulé et indique ce que l'on peut en faire dans une copie.</p>
+  </article>
+  <article>
+   <div class="num sans">2</div>
+   <h3>Le répertoire des citations</h3>
+   <p>Toutes les citations ont été contrôlées sur des sources fiables ; le tableau indique leur statut. Une idée dont la formulation exacte n'a pu être établie est donnée en paraphrase, sans guillemets : on ne cite jamais de mémoire approximative.</p>
+  </article>
+  <article>
+   <div class="num sans">3</div>
+   <h3>L'atelier de rédaction</h3>
+   <p>Le sujet proposé, le plan détaillé, l'extrait rédigé (II.A), la transition et la conclusion forment un ensemble cohérent : étudiez-les comme modèle, puis rédigez vous-même les autres sous-parties.</p>
+  </article>
+  <article>
+   <div class="num sans">4</div>
+   <h3>La méthode</h3>
+   <p>La fiche méthode tient sur une page : introduction, transitions, conclusion, art de citer.</p>
+  </article>
+  <article>
+   <div class="num sans">5</div>
+   <h3>Les conseils de méthode</h3>
+   <p>Les encadrés gris signalent un geste d'écriture à retenir.</p>
+  </article>
+ </div>
+
+ <h3>Légende du code couleur</h3>
+ <div class="legende sans">
+  <div class="hl-concept"><b>Concepts et mots-clés</b><br>Les repères théoriques fondamentaux, à définir rigoureusement.</div>
+  <div class="hl-ref"><b>Références et auteurs</b><br>Le socle de références qui fonde votre argumentation : nom, titre, date.</div>
+  <div class="hl-usage"><b>Usage stratégique, devenir de l'idée</b><br>Ce que l'on fait de l'idée dans la dynamique de la copie (fonctions rhétoriques).</div>
+ </div>
+
+ <nav class="sommaire-dossier" aria-label="Sommaire du dossier">
+  <p><b>Sommaire</b></p>
+  <ol>
+   <li><a href="#fiche-notions">La boîte à outils théorique : fiche notions</a></li>
+   <li><a href="#repertoire-citations">Le répertoire des citations vérifiées</a></li>
+   <li><a href="#sujet-analyse">Sujet proposé et analyse</a></li>
+   <li><a href="#plan-detaille">Plan détaillé</a></li>
+   <li><a href="#extrait-redige">L'atelier de rédaction : extrait rédigé II.A</a></li>
+   <li><a href="#transition-ii-iii">Modèle de transition de la partie II à la partie III</a></li>
+   <li><a href="#conclusion-ouverture">Conclusion générale et ouverture</a></li>
+   <li><a href="#fiche-methode">Fiche méthode</a></li>
+   <li><a href="#glossaire">Glossaire</a></li>
+   <li><a href="#bibliographie">Bibliographie</a></li>
+  </ol>
+ </nav>
+</section>
+
+<section id="fiche-notions">
+ <div class="kicker sans">Dossier · 1</div>
+ <h2>La boîte à outils théorique : fiche notions</h2>
+ <p>Chaque notion est rattachée à l'œuvre où elle est formulée. La dernière colonne indique ce que l'on fait de l'idée dans la dynamique de la copie.</p>
+ <div class="tablewrap">
+ <table class="stack-table">
+  <thead>
+   <tr><th class="hl-concept">Notion</th><th class="hl-ref">Auteur et œuvre</th><th>Définition</th><th class="hl-usage">Usage stratégique</th></tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td data-label="Notion" class="hl-concept">Le schème et la correction (<i>schema and correction</i>)</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Gombrich, <i>L'Art et l'Illusion</i> (<i>Art and Illusion</i>, 1960)</td>
+    <td data-label="Définition">Processus psychologique et historique par lequel un artiste n'invente jamais une forme à partir de rien. Il part d'une formule graphique héritée de sa tradition (le schème) et la confronte empiriquement au réel pour la modifier (la correction).</td>
+    <td data-label="Usage stratégique" class="hl-usage">Sert de pivot rationaliste pour démontrer que l'apprentissage technique et l'imitation des maîtres sont les conditions de possibilité de l'évolution des formes.</td>
+   </tr>
+   <tr>
+    <td data-label="Notion" class="hl-concept">La métamorphose</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Malraux, <i>Les Voix du silence</i> (1951) ; <i>La Métamorphose des dieux</i> (1957-1976)</td>
+    <td data-label="Définition">Processus ontologique par lequel une œuvre d'art survit à la mort de la civilisation qui l'a vue naître. En changeant d'époque, elle change de sens : l'idole religieuse ou l'objet de culte devient, dans le regard moderne, une œuvre d'art pure au sein du Musée imaginaire, et participe de ce que Malraux nomme l'anti-destin.</td>
+    <td data-label="Usage stratégique" class="hl-usage">C'est le cœur de la bascule dialectique. Permet de concevoir l'art non plus comme un miroir du monde, mais comme une protestation humaine et une victoire sur le néant.</td>
+   </tr>
+   <tr>
+    <td data-label="Notion" class="hl-concept">L'aura</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Benjamin, « L'Œuvre d'art à l'époque de sa reproductibilité technique » (1935-1939)</td>
+    <td data-label="Définition">« L'unique apparition d'un lointain, si proche soit-il. » C'est le caractère unique, authentique et sacré d'une œuvre d'art, indissociable de son ancrage dans son lieu et son temps d'origine (<i>hic et nunc</i>), mis à mal par la reproductibilité technique.</td>
+    <td data-label="Usage stratégique" class="hl-usage">Servira de contre-argument matérialiste face à Malraux. Permet de montrer que l'invention et le sacré doivent, à l'ère moderne, composer avec la production de masse.</td>
+   </tr>
+   <tr>
+    <td data-label="Notion" class="hl-concept">La mort de l'auteur</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Barthes, « La mort de l'auteur » (1968), repris dans <i>Le Bruissement de la langue</i> (1984)</td>
+    <td data-label="Définition">Révolution sémiologique qui pose que le sens d'un texte ou d'une œuvre ne réside pas dans l'intention de son créateur (l'Auteur-Dieu), mais dans l'espace de sa réception. L'œuvre est redéfinie comme un tissu de citations et de signes préexistants.</td>
+    <td data-label="Usage stratégique" class="hl-usage">Argument de clôture. Permet de dépasser les dualismes en montrant qu'inventer, c'est réorganiser des codes déjà imités.</td>
+   </tr>
+  </tbody>
+ </table>
+ </div>
+
+ <h3>Notions complémentaires</h3>
+ <div class="tablewrap">
+ <table class="stack-table">
+  <thead>
+   <tr><th class="hl-concept">Notion</th><th class="hl-ref">Auteur et œuvre</th><th>Définition</th><th class="hl-usage">Usage stratégique</th></tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td data-label="Notion" class="hl-concept">« Il n'y a que des artistes »</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Gombrich, <i>Histoire de l'art</i> (<i>The Story of Art</i>, 1950)</td>
+    <td data-label="Définition">Refus de faire de l'Art une essence : il n'existe que des pratiques situées, des solutions singulières à des problèmes de représentation.</td>
+    <td data-label="Usage stratégique" class="hl-usage">Nominalisme esthétique : nuancer toute définition abstraite de l'art (I.C).</td>
+   </tr>
+   <tr>
+    <td data-label="Notion" class="hl-concept">Le Musée imaginaire</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Malraux, <i>Le Musée imaginaire</i> (1947), repris dans <i>Les Voix du silence</i> (1951)</td>
+    <td data-label="Définition">Ensemble des œuvres que la reproduction photographique rend présentes à l'esprit, au-delà des musées réels ; il confronte des œuvres que rien ne destinait à se rencontrer.</td>
+    <td data-label="Usage stratégique" class="hl-usage">Articuler Malraux et Benjamin : la reproduction comme chance ou comme perte (transition II vers III).</td>
+   </tr>
+   <tr>
+    <td data-label="Notion" class="hl-concept">L'anti-destin</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Malraux, <i>Les Voix du silence</i> (1951), « La Monnaie de l'Absolu »</td>
+    <td data-label="Définition">L'art comme victoire de l'homme sur sa condition mortelle et sur le temps : les formes survivent aux civilisations qui les ont produites.</td>
+    <td data-label="Usage stratégique" class="hl-usage">Donner une portée existentielle à la création (II.A).</td>
+   </tr>
+   <tr>
+    <td data-label="Notion" class="hl-concept">Valeur cultuelle / valeur d'exposition</td>
+    <td data-label="Auteur et œuvre" class="hl-ref">Benjamin, même essai</td>
+    <td data-label="Définition">L'œuvre passe d'une fonction rituelle à une fonction d'exposition : être vue, diffusée.</td>
+    <td data-label="Usage stratégique" class="hl-usage">Prolonger la métamorphose de Malraux par une lecture historique et technique (III.A).</td>
+   </tr>
+  </tbody>
+ </table>
+ </div>
+ <div class="conseil"><b>Conseil de méthode.</b> Une notion ne s'emploie jamais seule : on la définit, on la situe (auteur, œuvre, date), puis on montre ce qu'elle permet de penser dans le sujet. Une définition récitée sans application n'apporte rien au devoir.</div>
+</section>
+
+<section id="repertoire-citations">
+ <div class="kicker sans">Dossier · 2</div>
+ <h2>Le répertoire des citations vérifiées</h2>
+ <p>Chaque citation donnée entre guillemets a été confrontée à au moins deux sources indépendantes (fac-similés, sites de fondations, articles universitaires). Statuts : exacte (formulation confirmée), corrigée (formulation ou attribution rectifiée par rapport à la première version du dossier), transformée en paraphrase (idée attestée mais formulation introuvable : on la reprend sans guillemets), ajoutée (citation exacte complétant le répertoire). Les numéros de page ne sont donnés que lorsqu'ils sont attestés de façon concordante.</p>
+ <div class="tablewrap">
+ <table class="stack-table">
+  <thead>
+   <tr><th>Citation</th><th>Référence</th><th>Statut</th><th>Emploi</th></tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td data-label="Citation">« Disons nettement, tout d'abord, qu'à la vérité, “l'Art” n'a pas d'existence propre. Il n'y a que des artistes. »</td>
+    <td data-label="Référence">Gombrich, <i>Histoire de l'art</i>, incipit (<i>The Story of Art</i>, 1950) ; trad. J. Combe, C. Lauriol et D. Collins, Paris, Phaidon, 2001.</td>
+    <td data-label="Statut"><span class="statut">Corrigée</span> Le dossier citait « Il n'y a pas d'Art, il n'y a que des artistes. », simplification courante de la traduction. La ponctuation de la première phrase varie selon les éditions.</td>
+    <td data-label="Emploi">Nominalisme esthétique (I.C).</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">Paraphrase : selon Gombrich, Giotto, renonçant à l'écriture conventionnelle des signes, crée l'illusion que l'épisode sacré se déroule devant nos yeux et redécouvre l'art de suggérer la profondeur sur une surface plane.</td>
+    <td data-label="Référence">Gombrich, <i>Histoire de l'art</i>, chap. 10 (« The Church Triumphant » dans l'original anglais, sur le XIIIe siècle).</td>
+    <td data-label="Statut"><span class="statut">Transformée en paraphrase</span> La phrase du dossier (« … se transforme en une exploration de l'espace réel ») est introuvable. L'idée est attestée par le texte anglais (“Giotto had rediscovered the art of creating the illusion of depth on a flat surface”) et par une traduction citée dans l'<i>Encyclopædia Universalis</i> (une seule source pour le français).</td>
+    <td data-label="Emploi">La révolution spatiale (I.A).</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">“Making comes before matching.”</td>
+    <td data-label="Référence">Gombrich, <i>Art and Illusion</i>, 1960 ; trad. fr. G. Durand, <i>L'Art et l'Illusion. Psychologie de la représentation picturale</i>, Gallimard, 1971.</td>
+    <td data-label="Statut"><span class="statut">Ajoutée</span> Exacte en anglais ; traduction française de G. Durand non vérifiée : « le faire précède la confrontation » (notre traduction).</td>
+    <td data-label="Emploi">Schème et correction (I.B).</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">Paraphrase : selon Malraux, le Musée imaginaire fait dialoguer les œuvres entre elles, et non plus chacune avec son époque.</td>
+    <td data-label="Référence">Malraux, <i>Les Voix du silence</i>, 1951 (première version : <i>Le Musée imaginaire</i>, Skira, 1947).</td>
+    <td data-label="Statut"><span class="statut">Transformée en paraphrase</span> La phrase du dossier (« Le Musée Imaginaire substitue au dialogue d'une œuvre avec son époque le dialogue des œuvres entre elles. ») est introuvable dans les sources consultées.</td>
+    <td data-label="Emploi">Le Musée imaginaire (II.A).</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« Le musée sépare l'œuvre du monde “profane” et la rapproche des œuvres opposées ou rivales. Il est une confrontation de métamorphoses. »</td>
+    <td data-label="Référence">Malraux, <i>Les Voix du silence</i>, 1951, « Le Musée imaginaire ».</td>
+    <td data-label="Statut"><span class="statut">Ajoutée</span> Exacte : formulation authentique de l'idée du « dialogue » des œuvres.</td>
+    <td data-label="Emploi">II.A et II.B.</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« Car un Musée imaginaire s'est ouvert, qui va pousser à l'extrême l'incomplète confrontation imposée par les vrais musées : répondant à l'appel de ceux-ci, les arts plastiques ont inventé leur imprimerie. »</td>
+    <td data-label="Référence">Malraux, <i>Le Musée imaginaire</i> (1947 ; éd. revue 1965, Gallimard, « Folio essais »).</td>
+    <td data-label="Statut"><span class="statut">Ajoutée</span> Exacte (la majuscule d'« Imaginaire » varie selon les éditions).</td>
+    <td data-label="Emploi">Transition II vers III : Malraux reconnaît lui-même le rôle de la reproduction.</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« L'art est un anti-destin. »</td>
+    <td data-label="Référence">Malraux, <i>Les Voix du silence</i>, 1951, IVe partie, « La Monnaie de l'Absolu ».</td>
+    <td data-label="Statut"><span class="statut">Exacte</span> Attribution précisée : <i>Les Voix du silence</i>, non les <i>Antimémoires</i> (1967).</td>
+    <td data-label="Emploi">II.A.</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">Paraphrase : selon Malraux, l'art fait entendre à travers les siècles un dialogue des métamorphoses et des résurrections, par lequel l'homme mortel arrache au néant une forme qui lui survit.</td>
+    <td data-label="Référence">Malraux, <i>Les Voix du silence</i>, 1951, dernières pages.</td>
+    <td data-label="Statut"><span class="statut">Transformée en paraphrase</span> La seconde phrase du dossier (« Il est le chant discontinu des résurrections… ») est introuvable ; elle semble condenser le passage authentique cité ci-dessous.</td>
+    <td data-label="Emploi">II.A.</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« Sans doute, pour un croyant, ce long dialogue des métamorphoses et des résurrections s'unit-il en une voix divine […] ; mais il est beau que l'animal qui sait qu'il doit mourir arrache à l'ironie des nébuleuses le chant des constellations, et qu'il le lance au hasard des siècles, auxquels il imposera des paroles inconnues. »</td>
+    <td data-label="Référence">Malraux, <i>Les Voix du silence</i>, Gallimard, « La Galerie de la Pléiade », 1951, dernières pages de l'ouvrage.</td>
+    <td data-label="Statut"><span class="statut">Ajoutée</span> Exacte (deux sources concordantes). Remplace la seconde phrase du dossier dans l'extrait.</td>
+    <td data-label="Emploi">II.A : prolonger l'« anti-destin ».</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« Le plus grand mystère n'est pas que nous soyons jetés au hasard entre la profusion de la matière et celle des astres ; c'est que, dans cette prison, nous tirions de nous-mêmes des images assez puissantes pour nier notre néant. »</td>
+    <td data-label="Référence">Malraux, <i>Les Noyers de l'Altenburg</i>, 1943 (Lausanne, Éditions du Haut-Pays ; Gallimard, 1948). Propos prêté à un personnage du roman.</td>
+    <td data-label="Statut"><span class="statut">Corrigée</span> « astres » et non « étoiles » ; point-virgule rétabli ; attribution au roman.</td>
+    <td data-label="Emploi">II.A.</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« l'unique apparition d'un lointain, si proche soit-il »</td>
+    <td data-label="Référence">Benjamin, « L'Œuvre d'art à l'époque de sa reproductibilité technique », version de 1939, trad. M. de Gandillac revue par R. Rochlitz, <i>Œuvres III</i>, Gallimard, « Folio essais », 2000.</td>
+    <td data-label="Statut"><span class="statut">Corrigée</span> le dossier donnait « si proche qu'il puisse être ». La formule figure aussi dans la version de 1935 (trad. R. Rochlitz, même volume). Le début de la définition varie selon les traductions : on cite la formule seule.</td>
+    <td data-label="Emploi">Définir l'aura (III.A).</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« à l'époque de la reproductibilité technique, ce qui dépérit dans l'œuvre d'art, c'est son aura. »</td>
+    <td data-label="Référence">Benjamin, même essai, même édition (version de 1939).</td>
+    <td data-label="Statut"><span class="statut">Corrigée</span> le dossier inversait l'ordre de la phrase (« Ce qui dépérit dans l'œuvre d'art à l'époque… »).</td>
+    <td data-label="Emploi">Désacralisation (III.A).</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« le texte est un tissu de citations, issues des mille foyers de la culture. »</td>
+    <td data-label="Référence">Barthes, « La mort de l'auteur », <i>Manteia</i>, n° 5, 1968 ; repris dans <i>Le Bruissement de la langue</i>, Seuil, 1984, p. 65.</td>
+    <td data-label="Statut"><span class="statut">Exacte</span> (vérifiée sur un fac-similé de l'édition de 1984).</td>
+    <td data-label="Emploi">Intertextualité (III.B).</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« la naissance du lecteur doit se payer de la mort de l'Auteur. »</td>
+    <td data-label="Référence">Barthes, même texte, <i>Le Bruissement de la langue</i>, 1984, p. 67.</td>
+    <td data-label="Statut"><span class="statut">Ajoutée</span> Exacte (même fac-similé).</td>
+    <td data-label="Emploi">III.B-C.</td>
+   </tr>
+   <tr>
+    <td data-label="Citation">« L'art naît précisément de la fascination de l'insaisissable, du refus de copier des spectacles ; de la volonté d'arracher les formes au monde que l'homme subit pour les faire entrer dans celui qu'il gouverne. »</td>
+    <td data-label="Référence">Malraux, <i>Les Voix du silence</i>, 1951, « La Création artistique », p. 318.</td>
+    <td data-label="Statut"><span class="statut">Ajoutée</span> Exacte (trois sources concordantes, page comprise).</td>
+    <td data-label="Emploi">II.C : imitation ou invention.</td>
+   </tr>
+  </tbody>
+ </table>
+ </div>
+ <div class="conseil"><b>Conseil de méthode.</b> Apprenez les citations brèves par cœur et mot pour mot. Si votre mémoire hésite, paraphrasez : « selon Malraux, l'art naît du refus de copier ». Une citation approximative entre guillemets est une faute ; une paraphrase exacte est un argument.</div>
+</section>
+
+<section id="sujet-analyse">
+ <div class="kicker sans">Dossier · 3</div>
+ <h2>Sujet proposé et analyse</h2>
+ <div class="sujet-box">
+  <p class="note sans">Sujet proposé (sujet d'entraînement, non tiré d'un concours)</p>
+  <p class="libelle">« Le langage de l'art se réduit-il à l'exploration d'un espace réel ? »</p>
+  <p>Vous répondrez à cette question en vous appuyant notamment sur les œuvres de Gombrich, Malraux, Benjamin et Barthes étudiées dans ce dossier.</p>
+ </div>
+ <p><b>Les termes.</b> Le « langage de l'art » désigne à la fois les formes par lesquelles l'œuvre signifie (lignes, couleurs, mots) et le discours que l'on tient sur elle : la « poétique des formes et du verbe ». « L'exploration d'un espace réel » suppose un territoire qui préexiste à l'artiste : l'art serait connaissance du monde, et l'imitation son instrument. « Se réduit-il » invite à mesurer ce que cette définition laisse de côté.</p>
+ <p><b>Le présupposé.</b> Le sujet fait de la conquête de l'espace – de Giotto à la perspective – le fil de l'histoire de l'art. Le travail consiste à reconnaître la force de ce modèle, puis à en montrer les limites : la survie des œuvres hors de leur temps, puis leur dépendance à l'égard de la reproduction et de la lecture.</p>
+ <p><b>Problématique possible.</b> Si l'art ne se contente pas de reproduire un espace donné, mais arrache ses formes au temps et ne cesse d'être reproduit, relu et réinventé, son langage est-il exploration, invention, ou l'espace même où l'homme déchiffre sa propre énigme ?</p>
+ <div class="conseil"><b>Conseil de méthode.</b> Avant tout plan, écrivez au brouillon la définition de chaque mot du sujet et la question qu'il cache. La problématique naît d'une tension entre ces définitions, non d'une reformulation du libellé.</div>
+</section>
+
+<section id="plan-detaille">
+ <div class="kicker sans">Dossier · 4</div>
+ <h2>Plan détaillé</h2>
+
+ <div class="plan-part card g">
+  <h3>I. Le langage de l'art comme conquête de l'espace réel : l'approche de Gombrich</h3>
+  <p><b>A. Des signes à l'espace : la révolution de Giotto</b></p>
+  <ul>
+   <li>Selon Gombrich (<i>Histoire de l'art</i>, 1950), Giotto renonce à l'écriture conventionnelle des signes pour créer l'illusion de la profondeur sur une surface plane.</li>
+   <li>L'histoire de l'art apparaît comme une suite de conquêtes techniques et spatiales.</li>
+   <li>Accorder au sujet sa pleine légitimité : le modèle de l'exploration est puissant.</li>
+  </ul>
+  <p><b>B. Il n'y a pas d'œil innocent : le schème et la correction</b></p>
+  <ul>
+   <li>Gombrich, <i>L'Art et l'Illusion</i> (1960) : l'artiste part d'une formule héritée et la corrige au contact du réel ; « faire » précède « confronter ».</li>
+   <li>L'imitation des maîtres et l'apprentissage technique sont les conditions de l'évolution des formes.</li>
+   <li>Pivot rationaliste : explorer l'espace, c'est corriger des conventions.</li>
+  </ul>
+  <p><b>C. « Il n'y a que des artistes » : les limites du modèle</b></p>
+  <ul>
+   <li>Le nominalisme esthétique de Gombrich : pas d'essence de l'Art, mais des solutions singulières.</li>
+   <li>Limite : ce modèle trouve sa borne aux lisières des œuvres qui refusent la tyrannie de la <i>mimèsis</i> (art sacré, arts dits « primitifs »).</li>
+   <li>Transition : déplacer le regard de l'histoire vers l'ontologie.</li>
+  </ul>
+ </div>
+
+ <div class="plan-part card m">
+  <h3>II. Le langage de l'art comme arrachement au temps : Malraux</h3>
+  <p><b>A. Le Musée imaginaire comme anti-destin (extrait rédigé)</b></p>
+  <ul>
+   <li>La métamorphose : l'œuvre survit à la civilisation qui l'a vue naître (<i>Les Voix du silence</i>, 1951).</li>
+   <li>Le musée, « confrontation de métamorphoses » ; les images « assez puissantes pour nier notre néant » (<i>Les Noyers de l'Altenburg</i>, 1943).</li>
+   <li>« L'art est un anti-destin. »</li>
+  </ul>
+  <p><b>B. De l'idole à l'œuvre d'art : la métamorphose des dieux</b></p>
+  <ul>
+   <li><i>La Métamorphose des dieux</i> (1957-1976) : l'objet de culte devient œuvre d'art pour le regard moderne.</li>
+   <li>Le sens d'une œuvre n'est pas fixé par son origine.</li>
+   <li>L'art n'est plus un miroir du monde, mais une protestation humaine.</li>
+  </ul>
+  <p><b>C. L'art naît « du refus de copier des spectacles »</b></p>
+  <ul>
+   <li><i>Les Voix du silence</i> : arracher les formes au monde que l'homme subit pour les faire entrer dans celui qu'il gouverne.</li>
+   <li>L'invention l'emporte sur l'exploration : l'espace de l'œuvre n'est plus l'espace réel.</li>
+   <li>Limite : ce Musée imaginaire repose sur la reproduction photographique.</li>
+  </ul>
+ </div>
+
+ <div class="plan-part card">
+  <h3>III. Le soupçon de la modernité critique : l'œuvre reproduite, le texte tissé</h3>
+  <p><b>A. Benjamin : le dépérissement de l'aura</b></p>
+  <ul>
+   <li>Benjamin : l'aura, « l'unique apparition d'un lointain, si proche soit-il », dépérit à l'époque de la reproductibilité technique.</li>
+   <li>Passage de la valeur cultuelle à la valeur d'exposition : le dialogue universel des formes a des conditions matérielles.</li>
+   <li>Contre-argument matérialiste face à Malraux.</li>
+  </ul>
+  <p><b>B. Barthes : la mort de l'auteur</b></p>
+  <ul>
+   <li>Barthes (1968) : « le texte est un tissu de citations, issues des mille foyers de la culture ».</li>
+   <li>« La naissance du lecteur doit se payer de la mort de l'Auteur » : le sens naît dans la réception.</li>
+   <li>Retrouver Gombrich : inventer, c'est réorganiser des codes déjà imités.</li>
+  </ul>
+  <p><b>C. Le verbe, espace poreux</b></p>
+  <ul>
+   <li>Écrire sur l'art, ce n'est plus choisir entre la transparence du savant et le lyrisme du poète.</li>
+   <li>Le langage de l'art devient l'espace où l'homme déchiffre les signes de sa propre énigme.</li>
+   <li>Réponse au sujet : l'exploration d'un espace réel n'est qu'un moment du langage de l'art.</li>
+  </ul>
+ </div>
+ <div class="conseil"><b>Conseil de méthode.</b> Un plan dialectique n'est pas « oui / non / peut-être » : la troisième partie doit déplacer la question, ici en montrant que l'œuvre est un espace que le regard explore et réinvente.</div>
+</section>
+
+<section id="extrait-redige">
+ <div class="kicker sans">Dossier · 5</div>
+ <h2>L'atelier de rédaction : extrait rédigé</h2>
+ <h3>II.A. Le Musée imaginaire comme anti-destin</h3>
+ <div class="extrait">
+  <p>Pour s'émanciper d'une lecture purement téléologique et linéaire de l'art, pensée comme une suite de résolutions techniques et de conquêtes spatiales, il convient de déplacer le regard de l'histoire vers l'ontologie. Là où l'historien s'efforce d'enraciner l'œuvre dans sa contingence chronologique originelle, l'écrivain décèle au contraire une puissance d'arrachement et de survivance qui transcende les siècles. C'est précisément le sens du concept de métamorphose déployé par André Malraux dans <i>Les Voix du silence</i> (1951), puis dans <i>La Métamorphose des dieux</i>. Dès lors qu'une œuvre franchit le seuil de sa propre disparition historique, elle accède à une seconde vie autonome. L'espace muséal, qu'il soit physique ou mental, n'est donc pas un cimetière de reliques, mais le lieu d'une confrontation dynamique et transhistorique : le musée, écrit Malraux, « est une confrontation de métamorphoses ». Le Musée imaginaire pousse cette logique à son terme : il fait dialoguer les œuvres entre elles, et non plus chacune avec son époque.</p>
+  <p>Face au vertige du cosmos et à l'effacement inéluctable des civilisations, la forme artistique s'impose comme la seule trace tangible d'une souveraineté de l'esprit. Dès 1943, un personnage des <i>Noyers de l'Altenburg</i> formulait cette profession de foi esthétique : « Le plus grand mystère n'est pas que nous soyons jetés au hasard entre la profusion de la matière et celle des astres ; c'est que, dans cette prison, nous tirions de nous-mêmes des images assez puissantes pour nier notre néant. » La création artistique n'est pas un luxe culturel ; elle est une nécessité anthropologique, un geste d'insoumission. C'est pourquoi Malraux peut affirmer, dans une formule aux allures d'axiome métaphysique, que « l'art est un anti-destin ». Les dernières pages des <i>Voix du silence</i> en déploient le sens : si, pour le croyant, « ce long dialogue des métamorphoses et des résurrections » s'unit en une voix divine, « il est beau que l'animal qui sait qu'il doit mourir arrache à l'ironie des nébuleuses le chant des constellations, et qu'il le lance au hasard des siècles ». L'art devient ainsi le chant discontinu des résurrections par lequel l'homme arrache sa propre forme au silence de la mort.</p>
+ </div>
+ <div class="conseil"><b>Conseil de méthode.</b> Une sous-partie bien construite part d'une phrase qui la relie à ce qui précède (ici : quitter la lecture linéaire de la partie I), avance une thèse, l'appuie sur des citations exactes et attribuées à la bonne œuvre, puis en dégage la portée. Ne citez jamais une formule dont vous n'êtes pas sûr : reformulez-la avec vos mots (« selon Malraux, … »). Un style ample n'est une qualité que s'il reste précis.</div>
+</section>
+
+<section id="transition-ii-iii">
+ <div class="kicker sans">Dossier · 6</div>
+ <h2>Modèle de transition de la partie II à la partie III</h2>
+ <div class="extrait">
+  <p>Le lyrisme malrucien substitue ainsi au temps linéaire des historiens la polyphonie glorieuse d'un Musée imaginaire où le verbe poétique se fait le corollaire du sacré. Cependant, cette transfiguration métaphysique ne saurait masquer ses propres conditions matérielles de possibilité. En célébrant la résurrection intemporelle des chefs-d'œuvre, Malraux, qui reconnaît pourtant que « les arts plastiques ont inventé leur imprimerie », ne s'attarde guère sur le soubassement industriel de sa propre intuition : le Musée imaginaire n'est rendu possible que par la profanation technique de la reproduction photographique. Il convient alors de confronter cette mythologie oraculaire au soupçon de la modernité critique. À l'ère de la reproductibilité technique et de la mort de l'auteur, le langage de l'art se dépouille de son aura pour s'offrir au scalpel de l'analyse sémiologique.</p>
+ </div>
+ <div class="conseil"><b>Conseil de méthode.</b> Une transition réussie fait surgir la partie suivante des limites de la précédente : bilan, objection, annonce. Vérifiez que l'objection est juste envers l'auteur : Malraux n'ignore pas le rôle de la photographie, il en fait même la condition du Musée imaginaire ; c'est sa portée matérielle et politique qu'il laisse dans l'ombre, et que Benjamin met en lumière.</div>
+</section>
+
+<section id="conclusion-ouverture">
+ <div class="kicker sans">Dossier · 7</div>
+ <h2>Conclusion générale et ouverture</h2>
+ <div class="extrait">
+  <p><b>Bilan de la démonstration.</b> Au terme de cette réflexion, il apparaît que le langage de l'art ne saurait être réduit à la seule et linéaire « exploration d'un espace réel ». Si l'approche historique et psychologique d'Ernst Gombrich a le mérite immense de mettre à nu la mécanique du schème et la sédimentation des conventions graphiques sans lesquelles l'œil humain resterait aveugle, elle trouve sa limite aux lisières des œuvres qui refusent la tyrannie de la <i>mimèsis</i>. C'est alors que le verbe d'André Malraux, dans <i>Les Voix du silence</i>, opère la transfiguration de la forme en anti-destin. En postulant l'existence d'un Musée imaginaire affranchi des siècles, l'écrivain extrait les chefs-d'œuvre de leur contingence historique pour les hisser au rang d'une polyphonie métaphysique, où le cri des formes nie le néant de la mort.</p>
+  <p>Toutefois, la modernité critique est venue instiller le soupçon au cœur de cette liturgie séculière. L'analyse matérialiste de Walter Benjamin, antérieure aux <i>Voix du silence</i>, permet de rappeler que ce dialogue universel des formes est tributaire d'une reproductibilité technique qui profane l'aura et l'authenticité de l'œuvre unique. Parallèlement, la révolution sémiologique menée par Roland Barthes a destitué le mythe de l'Auteur-Dieu pour penser le texte et l'image comme des tissus de citations et de codes préexistants, réconciliant paradoxalement la structure formelle de Gombrich et le morcellement contemporain. Écrire sur l'art, dès lors, ce n'est plus choisir entre la transparence scientifique du savant et le lyrisme sacré du poète, mais accepter que le verbe soit cet espace poreux où l'homme déchiffre les signes de sa propre énigme.</p>
+  <p><b>Ouverture philosophique.</b> Ce parcours critique nous invite <i>in fine</i> à déplacer le curseur de l'esthétique vers l'anthropologie philosophique. Si le langage des formes balance constamment entre la rationalisation du code technique et le jaillissement d'un absolu muet, il réactive une interrogation fondamentale et aporétique : l'art est-il une imitation ou une invention ?</p>
+  <p>Si l'on suit le sillage de l'imitation – non pas comme copie servile, mais comme <i>mimèsis</i> aristotélicienne ou comme reprise et correction du schème –, l'artiste redécouvre et réorganise les structures déjà latentes du réel et de la tradition. Si, à l'inverse, on y décèle une pure invention, l'art devient cette création démiurgique <i>ex nihilo</i>, cette insurrection de formes inédites capables de fonder un monde là où il n'y avait que le silence de la matière. C'est peut-être dans l'impossibilité de trancher ce nœud gordien que réside la grandeur de l'expérience esthétique : l'art invente précisément en imitant, et imite en inventant, offrant à l'humanité le miroir d'une liberté qui ne cesse de se réécrire.</p>
+ </div>
+ <div class="conseil"><b>Conseil de méthode.</b> Ouvrez le bilan par une reprise des termes du sujet : le correcteur voit aussitôt que vous répondez à la question posée. Reprenez ensuite chaque partie en une ou deux phrases, en gardant les structures concessives (« si…, elle trouve sa limite… ») qui évitent la caricature. Montrez enfin comment la fin du devoir retrouve son début (ici, Barthes rejoint Gombrich). L'ouverture doit déplacer la question sans la répéter ; une formule finale frappante, comme un chiasme, n'a de valeur que si elle résume vraiment votre réponse.</div>
+</section>
+
+<section id="fiche-methode">
+ <div class="kicker sans">Dossier · 8</div>
+ <h2>Fiche méthode : la dissertation en une page</h2>
+ <div class="card">
+  <h3>L'introduction</h3>
+  <ul>
+   <li>Amorce : un exemple, une œuvre ou une citation exacte qui fait surgir la question (deux ou trois phrases).</li>
+   <li>Analyse du sujet : définir les termes, repérer le présupposé et les tensions.</li>
+   <li>Problématique : une question qui naît de cette analyse, jamais la simple reprise du sujet.</li>
+   <li>Annonce du plan : claire et sobre, sans « dans une première partie nous verrons ».</li>
+  </ul>
+  <h3>Les transitions</h3>
+  <ul>
+   <li>Bilan de la partie, limite rencontrée, annonce de la partie suivante.</li>
+   <li>Elles font voir la progression logique : chaque partie répond à une difficulté laissée par la précédente.</li>
+  </ul>
+  <h3>La conclusion</h3>
+  <ul>
+   <li>Bilan du mouvement d'ensemble, réponse nette à la problématique, ouverture précise.</li>
+   <li>Aucun argument nouveau ; aucune citation non commentée.</li>
+  </ul>
+  <h3>L'art de citer</h3>
+  <ul>
+   <li>Citer exactement, entre guillemets français, avec l'auteur, le titre en italique et la date : Malraux, <i>Les Voix du silence</i>, 1951.</li>
+   <li>Ne jamais inventer une page ni une formulation. En cas de doute, paraphraser sans guillemets : « selon Malraux, … ».</li>
+   <li>Distinguer l'œuvre citée de l'auteur cité : une phrase prononcée par un personnage de roman n'est pas une thèse de l'auteur sans précaution.</li>
+   <li>Introduire, citer, commenter : la citation n'est jamais une preuve à elle seule.</li>
+   <li>Préférer une citation brève et bien analysée à une citation longue et inexploitée.</li>
+  </ul>
+  <h3>Gestion du temps (épreuve de quatre à six heures)</h3>
+  <ul>
+   <li>Analyse du sujet et problématique : environ un quart du temps. Plan détaillé au brouillon : un quart. Rédaction : la moitié, en gardant dix minutes pour la relecture (accents, accords, ponctuation).</li>
+  </ul>
+ </div>
+</section>
+
+<section id="glossaire">
+ <div class="kicker sans">Dossier · 9</div>
+ <h2>Glossaire</h2>
+ <div class="tablewrap">
+ <table class="stack-table glossaire-table">
+  <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+  <tbody>
+   <tr><td data-label="Terme">Aura</td><td data-label="Définition">Chez Benjamin, présence unique et lointaine de l'œuvre originale, liée à son lieu et à sa tradition.</td></tr>
+   <tr><td data-label="Terme">Authenticité</td><td data-label="Définition">Ce qui, dans une œuvre, tient à son origine et à son histoire matérielle ; ce que la reproduction ne transmet pas.</td></tr>
+   <tr><td data-label="Terme"><i>Hic et nunc</i></td><td data-label="Définition">« Ici et maintenant » : l'existence singulière de l'œuvre en un lieu et un moment donnés.</td></tr>
+   <tr><td data-label="Terme">Intertextualité</td><td data-label="Définition">Relation d'un texte avec d'autres textes qu'il reprend, transforme ou cite ; notion développée par J. Kristeva et R. Barthes.</td></tr>
+   <tr><td data-label="Terme">Métamorphose</td><td data-label="Définition">Chez Malraux, transformation du sens d'une œuvre lorsqu'elle perd sa fonction première et entre dans le musée.</td></tr>
+   <tr><td data-label="Terme"><i>Mimèsis</i></td><td data-label="Définition">Terme grec : imitation, représentation. Au cœur des poétiques de Platon et d'Aristote.</td></tr>
+   <tr><td data-label="Terme">Musée imaginaire</td><td data-label="Définition">Chez Malraux, ensemble des œuvres rendues présentes par la reproduction photographique.</td></tr>
+   <tr><td data-label="Terme">Schème (ou schéma)</td><td data-label="Définition">Chez Gombrich, formule graphique héritée de la tradition, dont l'artiste part avant de la corriger au contact du réel.</td></tr>
+   <tr><td data-label="Terme">Scripteur</td><td data-label="Définition">Chez Barthes, celui qui écrit, substitué à l'« Auteur » tout-puissant : il ne précède pas son texte, il naît avec lui.</td></tr>
+   <tr><td data-label="Terme">Style</td><td data-label="Définition">Chez Malraux, la loi par laquelle un artiste ou une époque transforme les formes du monde en un monde cohérent.</td></tr>
+   <tr><td data-label="Terme">Valeur cultuelle / d'exposition</td><td data-label="Définition">Chez Benjamin, les deux pôles de la réception : l'œuvre comme objet de culte, l'œuvre comme objet donné à voir.</td></tr>
+  </tbody>
+ </table>
+ </div>
+</section>
+
+<section id="bibliographie">
+ <div class="kicker sans">Dossier · 10</div>
+ <h2>Bibliographie</h2>
+ <h3>Œuvres étudiées</h3>
+ <div class="biblio">
+  <p>Barthes, Roland, « La mort de l'auteur » (<i>Manteia</i>, n° 5, 1968), dans <i>Le Bruissement de la langue. Essais critiques IV</i>, Paris, Seuil, 1984, p. 61-67.</p>
+  <p>Benjamin, Walter, « L'Œuvre d'art à l'époque de sa reproductibilité technique », versions de 1935 (trad. R. Rochlitz) et de 1939 (trad. M. de Gandillac, revue par R. Rochlitz), dans <i>Œuvres III</i>, Paris, Gallimard, « Folio essais », 2000.</p>
+  <p>Gombrich, Ernst H., <i>Histoire de l'art</i> (<i>The Story of Art</i>, 1950), trad. J. Combe, C. Lauriol et D. Collins, Paris, Phaidon, 2001.</p>
+  <p>Gombrich, Ernst H., <i>L'Art et l'Illusion. Psychologie de la représentation picturale</i> (<i>Art and Illusion</i>, 1960), trad. G. Durand, Paris, Gallimard, « Bibliothèque des sciences humaines », 1971.</p>
+  <p>Malraux, André, <i>Les Noyers de l'Altenburg</i>, Lausanne, Éditions du Haut-Pays, 1943 ; Paris, Gallimard, 1948.</p>
+  <p>Malraux, André, <i>Le Musée imaginaire</i> (1947), éd. revue, Paris, Gallimard, « Folio essais ».</p>
+  <p>Malraux, André, <i>Les Voix du silence</i>, Paris, Gallimard, « La Galerie de la Pléiade », 1951.</p>
+  <p>Malraux, André, <i>La Métamorphose des dieux</i> : <i>Le Surnaturel</i> (1957), <i>L'Irréel</i> (1974), <i>L'Intemporel</i> (1976), Paris, Gallimard.</p>
+ </div>
+ <h3>Ressources en ligne utiles</h3>
+ <div class="biblio">
+  <p>Site Présence d'André Malraux sur la Toile (malraux.org) : articles et dossiers sur le Musée imaginaire et la métamorphose.</p>
+  <p>Gallica (gallica.bnf.fr) et Wikisource : éditions anciennes numérisées, utiles pour vérifier une citation.</p>
+ </div>
+ <div class="conseil"><b>Conseil de méthode.</b> Dans une copie, une référence complète tient en peu de mots : auteur, titre en italique, date de première publication. Inutile de citer l'édition ou la page, sauf si le sujet porte sur un texte précis.</div>
+</section>
+
+
 <section id="carnet">
  <div class="kicker sans">Mon carnet</div>
  <h2>Tout mon travail, au même endroit</h2>
@@ -427,7 +902,7 @@ footer a{color:var(--muted)}
 </main>
 
 <footer class="sans">
- <p>© 2026 Madame Carole Paoli Pompougnac · CC BY-NC-ND 4.0</p>
+ <p>© 2026 Madame Carole Paoli · CC BY-NC-ND 4.0</p>
  <p>Cours croisé Malraux × Gombrich · Images : Wikimedia Commons
  (<a href="https://commons.wikimedia.org/wiki/File:Tomb_of_Nebamun.jpg">Nebamun, tombe, vers 1350 av. J.-C., British Museum</a> ;
  <a href="https://commons.wikimedia.org/wiki/File:Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj.jpg">Giotto, Lamentation, vers 1305, chapelle des Scrovegni, Padoue</a> ;
